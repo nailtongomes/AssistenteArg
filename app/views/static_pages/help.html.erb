@@ -1,0 +1,68 @@
+<% provide(:title, 'Ajuda') %>
+<div class="row">
+	<div class="span12">
+		<h1>Ajuda</h1>
+		<hr/>
+	</div>
+	<% if signed_in? %>
+	<%= textilize Page.find_by_key('ajuda_log').value if Page.find_by_key('ajuda_log').value.present?%>
+	<% else %>
+	<div class="span11 offset1">
+		<b>
+		<p>
+			1. O que é?
+		</p></b>
+		<p>
+			O Arg. é uma ferramenta construída em um ambiente virtual com o objetivo de auxiliar na composição de (bons) argumentos.
+		</p>
+		<b>
+		<p>
+			2. Para quem é?
+		</p></b>
+		<p>
+			O Arg. é destinado aos acadêmicos do curso de direito.
+		</p>
+		<b>
+		<p>
+			3. O que o Arg. me permite fazer?
+		</p></b>
+	</div>
+	<div class="span5 offset1">
+		<p>
+			É possível, através do Arg.:
+			<br/>
+			a) armazenar argumentos sem qualquer complicação;
+			<br/>
+			b) visualizá-los de forma clara e concisa;
+			<br/>
+			c) acompanhar os argumentos de outros usuários;
+			<br/>
+			d) obter auxílio para compor bons argumentos e para aprimorá-los;
+			<br/>
+		</p>
+	</div>
+	<div class="span5 pull-right">
+		<p>
+			e) aprender uma teoria de argumentação;
+			<br/>
+			f) conhecer os esquemas de argumentos;
+			<br/>
+			g) receber e fornecer avaliações de argumentos;
+			<br/>
+			h) estimular e ser estimulado a argumentar;
+			<br/>
+			i) encontrar bons argumentos...
+		</p>
+	</div>
+	<div class="span11 offset1">
+		<b>
+		<p>
+			4. Qual o objetivo do Arg.?
+		</b>
+		</p>
+		<p>
+			Ser uma ferramenta útil, capaz de contribuir e/ou somar na formação intelectual de seus usuários.
+		</p>
+	</div>
+	<% end %>
+</div>

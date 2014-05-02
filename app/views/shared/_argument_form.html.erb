@@ -1,0 +1,10 @@
+<%= form_for(@argument) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<p class="counter pull-right">Máximo de Caracteres: 1100</p>
+<%= f.text_area :content, :placeholder => "Argumente aqui...", :maxlength => 1100 %>
+<div class="pull-right">
+	<%= f.submit "Inserir", class: "btn btn-large btn-primary", :disable_with => "Aguarde..." %>
+</div>
+<%= link_to "Ajuda", sandargs_path, class: "btn btn-large btn-info" %>
+
+<% end %>

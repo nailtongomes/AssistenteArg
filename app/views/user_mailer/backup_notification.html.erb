@@ -1,0 +1,127 @@
+<h1>Usuários</h1>
+<hr/>
+<% if User.all.any? %>
+<ul>
+	<% User.all.each do |user| %>
+	<li>
+		<blockquote>
+			User.create!([:name =>  "<%= user.name %> - ID = <%= user.id %>",
+			:email => "<%= user.email %>",
+			:password => "123456",
+			:password_confirmation => "123456",
+			:moderator => "<%= user.moderator %>",
+			:admin => "<%= user.admin %>"], :without_protection => true)
+		</blockquote>
+	</li>
+	<hr/>
+	<% end %>
+</ul>
+<% end %>
+
+<h1>Argumentos</h1>
+<hr/>
+<% if Argument.all.any? %>
+<ol>
+	<% Argument.all.each do |argument| %>
+	<li>
+		<blockquote>
+			Argument.create!([:content =>  %{<%= argument.content %>},
+			:user_id => <%= argument.user_id %>,
+			:fact_id => <%= argument.fact_id %>], :without_protection => true)
+		</blockquote>
+	</li>
+	<hr/>
+	<% end %>
+</ol>
+<% end %>
+<h1>Casos</h1>
+<hr/>
+<% if Fact.all.any? %>
+<ul>
+	<% Fact.all.each do |fact| %>
+	<li>
+		<blockquote>
+			Fact.create!([:content =>  %{<%= fact.content %> - ID <%= fact.id %>},
+			:problem => %{<%= fact.problem %>},
+			:active => <%= fact.active %>,
+			:user_id => <%= fact.user_id %>], :without_protection => true)
+		</blockquote>
+	</li>
+	<hr/>
+	<% end %>
+</ul>
+<% end %>
+<h1>Páginas</h1>
+<hr/>
+<% if Page.all.any? %>
+<ol>
+	<% Page.all.each do |page| %>
+	<li>
+		<blockquote>
+			Page.create!(:key => "<%= page.key %>",
+			:value => %{<%= page.value %>})
+		</blockquote>
+	</li>
+	<hr/>
+	<% end %>
+</ol>
+<% end %>
+<h1>Esquemas</h1>
+<hr/>
+<% if Scheme.all.any? %>
+<ol>
+	<% Scheme.all.each do |scheme| %>
+	<li>
+		<blockquote>
+			Scheme.create!(:name => "<%= scheme.name %>",
+			:form => %{<%= scheme.form %>},
+			:cq =>  %{<%= scheme.cq %>})
+		</blockquote>
+	</li>
+	<hr/>
+	<% end %>
+</ol>
+<% end %>
+<h1>Avaliações</h1>
+<hr/>
+<% if Rate.all.any? %>
+<ol>
+	<% Rate.all.each do |rate| %>
+	<li>
+		<blockquote>
+			Rate.create!([:rateable_id => %{<%= rate.rateable_id %>},
+			:rateable_type =>  %{<%= rate.rateable_type %>}
+			:stars =>  %{<%= rate.stars %>}
+			:dimension =>  %{<%= rate.dimension %>}], :without_protection => true)
+		</blockquote>		
+	</li>
+	<hr/>
+	<% end %>
+</ol>
+<% end %>
+
+<h1>Documentos</h1>
+<hr/>
+<% if Document.all.any? %>
+<ol>
+	<% Document.all.each do |doc| %>
+	<li>
+		<blockquote>
+			Document.create!([:title => "<%= doc.title %>",
+			:subject => %{<%= doc.subject %>},
+			:body =>  %{<%= doc.body %>},
+			:active =>  %{<%= doc.active %>}
+			:user_id =>  %{<%= doc.user_id %>}], :without_protection => true)
+		</blockquote>
+	</li>
+	<hr/>
+	<% end %>
+</ol>
+<% end %>
+<hr/>
+<p>
+	Cordialmente,
+</p>
+<p>
+	A equipe do Arg.
+</p>
