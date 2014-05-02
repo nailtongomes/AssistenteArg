@@ -64,7 +64,7 @@ Arg::Application.configure do
   
   config.gem "ajaxful_rating"
   
-  config.action_mailer.default_url_options = { :host => 'argumentos.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'assistentearg.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
@@ -72,7 +72,7 @@ Arg::Application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: "argumentos.herokuapp.com",
+    domain: "assistentearg.herokuapp.com",
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: ENV["GMAIL_USERNAME"],
