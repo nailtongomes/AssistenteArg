@@ -696,6 +696,13 @@ Page.create!(:key => "ERes",
 })
 
 Page.create!(:key => "IntroGuia",
-:value => %{<p>Um dos objetivos do <b>[ ARG ]</b> concentra-se em <b><i>auxiliar</i></b> aqueles que tem dificuldade em estruturar um <b><i>argumento </i></b>e, por isso, necessitam de ajuda. Pensando nisso, almeja-se, através deste guia&nbsp;interativo, ajudar alguém a compor um argumento ao menos razoável com base em uma teoria de argumentação.&nbsp;</p><p><b><i>Clique </i></b>no ícone ao lado direito para iniciar a construção de seu argumento.</p><p>Abaixo, um vídeo de demonstração do <i><b>guia</b></i>:</p><p style="text-align: center;"><iframe width="560" height="315" src="//www.youtube.com/embed/BB0YDiOPam8?rel=0" frameborder="0" allowfullscreen=""></iframe></p>
+:value => %{<p>Um dos objetivos do <b>[ ARG ]</b> concentra-se em <b><i>auxiliar</i></b> aqueles que tem dificuldade em estruturar um <b><i>argumento </i></b>e, por isso, necessitam de ajuda. Pensando nisso, almeja-se, através deste guia&nbsp;interativo, ajudar alguém a compor um argumento ao menos razoável com base em uma teoria de argumentação.&nbsp;</p><p>Abaixo, um vídeo de demonstração do <i><b>guia</b></i>:</p><p style="text-align: center;"><iframe width="560" height="315" src="//www.youtube.com/embed/BB0YDiOPam8?rel=0" frameborder="0" allowfullscreen=""></iframe></p>
 })
 
+Page.create!(:key => "conceito_t",
+:value => %{<p></p>
+})
+
+Page.create!(:key => "about",
+:value => %{<h3>Nailton Gomes Silva | <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4450141Y0" target="_blank">Currículo Lattes</a></h3> <p style="text-align: justify"> Técnico em Informática pelo Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte/IFRN; <br> Acadêmico do Curso de Direito do Centro Universitário do Rio Grande do Norte/UNI-RN; <br> Bolsista de Iniciação Científica do PIBIC/CNPq. </p> <p style="text-align: right"> Desenvolvedor </p> <hr> <h3>José Eduardo de Almeida Moura | <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4794939D6" target="_blank">Currículo Lattes</a></h3> <p style="text-align: justify"> Doutor em Filosofia pela Universidade Estadual de Campinas/UNICAMP (1986). <br> Professor do Centro Universitário do Rio Grande do Norte/UNI-RN. </p> <p style="text-align: right"> Orientador </p> <hr> <h3>Joseane Alves Pinheiro | <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4761932D3" target="_blank">Currículo Lattes</a></h3> <p style="text-align: justify"> Mestre em Sistemas e Computação pela Universidade Federal do Rio Grande do Norte/UFRN (2005). <br> Professora do Centro Universitário do Rio Grande do Norte/UNI-RN. </p> <p style="text-align: right"> Orientadora </p>
+})

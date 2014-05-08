@@ -1,35 +1,55 @@
 <% provide(:title, 'Guia de Argumentação - Toulmin') %>
 <div class="row">
   <div class="span12">
-    <h1>Guia de Argumentação
-    <br/>
-    Toulmin</h1>
+    <h1>Guia de Argumentação</h1>
     <blockquote class="pull-right">
       <p>
         "Argumentos são interações humanas pelas quais se formulam, se debatem e/ou se confrontam linhas de raciocínio."
       </p>
       <small>Stephen Toulmin</small>
     </blockquote>
-    <div class="tabbable tabs-below">
-      <ul class="nav nav-tabs">
-        <li class="active">
-          <a href="#lA" data-toggle="tab">Meus Rascunhos</a>
-        </li>
-        <li>
-          <a href="#lE" data-toggle="tab">Construa um Argumento</a>
-        </li>
-        <li>
-          <a href="#lB" data-toggle="tab">Estrutura um Argumento</a>
-        </li>
-        <li>
-          <a href="#lC" data-toggle="tab">Qualidade em um argumento</a>
-        </li>
-        <li>
-          <a href="#lD" data-toggle="tab">Leituras e Referências</a>
-        </li>
-      </ul>
-      <div class="tab-content">
-        <div class="tab-pane active" id="lA">
+  </div>
+  <div class="tabbable tabs-below">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="#lA" data-toggle="tab">Introdução</a>
+      </li>
+      <li>
+        <a href="#lB" data-toggle="tab">Rascunhos</a>
+      </li>
+      <li>
+        <a href="#lC" data-toggle="tab">Constução de Argumento</a>
+      </li>
+      <li>
+        <a href="#lD" data-toggle="tab">Leituras e Referências</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="lA">
+        <div class="span8">
+          <h3 style="text-align: center">Introdução</h3>
+          <hr/>
+          <%= textilize Page.find_by_key('IntroGuia').value if Page.find_by_key('IntroGuia').value.present? %>
+        </div>
+        <div class="span4">
+          <h3 style="text-align: center">Sobre [ Argumentos ]</h3>
+          <hr/>
+          <p>
+            <a class="btn btn-info" data-toggle="modal" href="#conceito" >1. O que é?</a>
+          </p>
+          <p>
+            <a class="btn btn-info"  data-toggle="modal" href="#estrutura" >2. Qual sua estrutura?</a>
+          </p>
+          <p>
+            <a class="btn btn-info"  data-toggle="modal" href="#qualidade" >3. O que o torna bom?</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="lB">
+        <div class="offset1 span10 offset1">
+          <h3 style="text-align: center">Meus Rascunhos</h3>
+          <hr/>
           <% if @sandargs.any? %>
           <% @sandargs.each do |sandarg| %>
           <div class="well">
@@ -57,147 +77,130 @@
           <br/>
           <% end %>
         </div>
-        <div class="tab-pane" id="lE">
-          <%= form_for(@sandarg) do |f| %>
-          <%= render 'shared/error_messages', object: f.object %>
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      </div>
 
-            <!-- Indicators
+      <div class="tab-pane" id="lC">
+        <h3 style="text-align: center">Rascunho de Argumento</h3>
+        <hr/>
+        <%= form_for(@sandarg) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-            <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-            <li data-target="#myCarousel" data-slide-to="5"></li>
-            </ol>
-            -->
+          <!-- Indicators
 
-            <!-- Wrapper for slides -->
+          <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+          </ol>
+          -->
 
-            <div class="carousel-inner">
-              <div class="active item">
-                <div class="span8 offset2">
-                  <a class="pull-right">1/7</a>
-                  <div>
-                    <br/>
-                    <%= textilize Page.find_by_key('IntroGuia').value if Page.find_by_key('IntroGuia').value.present? %>
-                  </div>                  
-                  <hr/>
-                </div>
-              </div>
-              <div class="item">
-                <div class="span8 offset2">
-                  <a class="pull-right">2/7</a>
-                  <p>
-                    Cada argumento deve deve propor, reivindicar ou concluir alguma coisa [C]:
-                  </p>
-                  <%= f.text_area :claim,   :placeholder => "Ou seja, o que você está tentando provar?", :rows => "5"%>
-                  <h2>1. Pretensão/Conclusão <a class="btn pull-right" data-toggle="modal" href="#EPre" >Explicar</a></h2>
-                  <hr/>
-                </div>
-              </div>
-              <div class="item">
-                <div class="span8 offset2">
-                  <a class="pull-right">3/7</a>
-                  <p>
-                    Cada conclusão deve ser sustentada por fatos [G]:
-                  </p>
-                  <%= f.text_area :ground,   :placeholder => "Por que você supõe isso?", :rows => "5"%>
-                  <h2>2. Razões/Dados <a class="btn pull-right" data-toggle="modal" href="#ERaz" >Explicar</a></h2>
-                  <hr/>
-                </div>
-              </div>
-              <div class="item">
-                <div class="span8 offset2">
-                  <a class="pull-right">4/7</a>
-                  <p>
-                    Deve existir uma regra, um vínculo, entre a conclusão e os fatos [W]:
-                  </p>
-                  <%= f.text_area :warrant,   :placeholder => "Explique seu raciocínio...", :rows => "5"%>
-                  <h2>3. Garantia/Regra de Inferência <a class="btn pull-right" data-toggle="modal" href="#EGar" >Explicar</a></h2>
-                  <hr/>
+          <!-- Wrapper for slides -->
 
-                </div>
-              </div>
-              <div class="item">
-                <div class="span8 offset2">
-                  <a class="pull-right">5/7</a>
-                  <p>
-                    As regras provém de um fundamento [B]:
-                  </p>
-                  <%= f.text_area :backing,   :placeholder => "O quê fundamenta seu raciocínio?", :rows => "5"%>
-                  <h2>4. Respaldo <a class="btn pull-right" data-toggle="modal" href="#ERes" >Explicar</a></h2>
-                  <hr/>
-
-                </div>
-              </div>
-              <div class="item">
-                <div class="span8 offset2">
-                  <a class="pull-right">6/7</a>
-                  <p>
-                    Cada argumento pode admitir excessões [R]:
-                  </p>
-                  <%= f.text_area :rebuttal,   :placeholder => "Há alguma situação em que seu argumento não se sustenta?", :rows => "5"%>
-                  <h2>5. Reserva/Refutador/Anulador <a class="btn pull-right" data-toggle="modal" href="#ERef" >Explicar</a></h2>
-                  <hr/>
-                </div>
-              </div>
-              <div class="item">
-                <div class="span8 offset2">
-                  <a class="pull-right">7/7</a>
-                  <p>
-                    Cada argumento tem sua força verbalizada [Q]:
-                  </p>
-                  <%= f.text_field :qualifier, :placeholder => "Você acha provável ou é certo?",
-                    :data => {:provide => "typeahead",
-                      :items => "4",
-                      :source => '["necessariamente","possivelmente","é plausível","é inconteste", "não resta dúvida", "estes fatos, aqui expostos, tornam inafastável que", "demonstra-se de forma irrefutável"]'
-                    }%>
-                  <h2>6. Qualificador <a class="btn pull-right" data-toggle="modal" href="#EQua" >Explicar</a></h2>
-                  <hr/>
-                </div>
+          <div class="carousel-inner">
+            <div class="active item">
+              <div class="span8 offset2">
+                <a class="pull-right">1/6</a>
+                <p>
+                  Cada argumento deve deve propor, reivindicar ou concluir alguma coisa [C]:
+                </p>
+                <%= f.text_area :claim,   :placeholder => "Ou seja, o que você está tentando provar?", :rows => "5"%>
+                <h2>1. Pretensão/Conclusão <a class="btn btn-warning pull-right" data-toggle="modal" href="#EPre" >Explicar</a></h2>
+                <hr/>
               </div>
             </div>
-            <!-- Carousel nav -->
-            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            <div class="item">
+              <div class="span8 offset2">
+                <a class="pull-right">2/6</a>
+                <p>
+                  Cada conclusão deve ser sustentada por fatos [G]:
+                </p>
+                <%= f.text_area :ground,   :placeholder => "Por que você supõe isso?", :rows => "5"%>
+                <h2>2. Razões/Dados <a class="btn btn-warning pull-right" data-toggle="modal" href="#ERaz" >Explicar</a></h2>
+                <hr/>
+              </div>
+            </div>
+            <div class="item">
+              <div class="span8 offset2">
+                <a class="pull-right">3/6</a>
+                <p>
+                  Deve existir uma regra, um vínculo, entre a conclusão e os fatos [W]:
+                </p>
+                <%= f.text_area :warrant,   :placeholder => "Explique seu raciocínio...", :rows => "5"%>
+                <h2>3. Garantia/Regra de Inferência <a class="btn btn-warning pull-right" data-toggle="modal" href="#EGar" >Explicar</a></h2>
+                <hr/>
+
+              </div>
+            </div>
+            <div class="item">
+              <div class="span8 offset2">
+                <a class="pull-right">4/6</a>
+                <p>
+                  As regras provém de um fundamento [B]:
+                </p>
+                <%= f.text_area :backing,   :placeholder => "O quê fundamenta seu raciocínio?", :rows => "5"%>
+                <h2>4. Respaldo <a class="btn btn-warning pull-right" data-toggle="modal" href="#ERes" >Explicar</a></h2>
+                <hr/>
+
+              </div>
+            </div>
+            <div class="item">
+              <div class="span8 offset2">
+                <a class="pull-right">5/6</a>
+                <p>
+                  Cada argumento pode admitir excessões [R]:
+                </p>
+                <%= f.text_area :rebuttal,   :placeholder => "Há alguma situação em que seu argumento não se sustenta?", :rows => "5"%>
+                <h2>5. Reserva/Refutador/Anulador <a class="btn pull-right" data-toggle="modal" href="#ERef" >Explicar</a></h2>
+                <hr/>
+              </div>
+            </div>
+            <div class="item">
+              <div class="span8 offset2">
+                <a class="pull-right">6/6</a>
+                <p>
+                  Cada argumento tem sua força verbalizada [Q]:
+                </p>
+                <%= f.text_field :qualifier, :placeholder => "Você acha provável ou é certo?",
+                  :data => {:provide => "typeahead",
+                    :items => "4",
+                    :source => '["necessariamente", "provavelmente", "possivelmente","é plausível","é inconteste", "não resta dúvida", "estes fatos, aqui expostos, tornam inafastável que", "demonstra-se de forma irrefutável"]'
+                  }%>
+                <h2>6. Qualificador <a class="btn btn-warning pull-right" data-toggle="modal" href="#EQua" >Explicar</a></h2>
+                <hr/>
+              </div>
+            </div>
           </div>
-          <div class="pull-right">
-            <% if @sandarg.content.blank? %>
-            Gerar texto automático?
-            <% else %>
-            Sobrescrever texto do argumento?
-            <% end %>
-            <%= f.check_box :overwrite %> |
-            <%= f.submit "Gravar", class: "btn btn-large btn-primary", :disable_with => "Aguarde..." %>
-          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+        <div class="pull-right">
+          <% if @sandarg.content.blank? %>
+          Gerar texto automático?
+          <% else %>
+          Sobrescrever texto do argumento?
           <% end %>
+          <%= f.check_box :overwrite %> |
+          <%= f.submit "Gravar", class: "btn btn-large btn-primary", :disable_with => "Aguarde..." %>
         </div>
+        <% end %>
+      </div>
 
-        <div class="tab-pane" id="lB">
-          <div class="span10 offset1">
-            <%= textilize Page.find_by_key('estrutura_t').value if Page.find_by_key('estrutura_t').value.present? %>
-            <div align="center">
-              <%= image_tag("Estrutura.png", :size => "250x400", :alt => "Estrutura de um Argumento") %>
-            </div>
-          </div>
-
+      <div class="tab-pane" id="lD">
+        <div class="span8">
+        <h3 style="text-align: center">Referências </h3>
+        <hr/>
+        <%= textilize Page.find_by_key('referencias').value if Page.find_by_key('referencias').value.present? %>
         </div>
-        <div class="tab-pane" id="lC">
-          <%= textilize Page.find_by_key('qualidade_t').value if Page.find_by_key('qualidade_t').value.present? %>
-        </div>
-        <div class="tab-pane" id="lD">
-          <h3> Sugestões de Leitura: </h3>
-          <br/>
-          <%= textilize Page.find_by_key('leituras').value if Page.find_by_key('leituras').value.present? %>
-          <hr/>
-          <h3> Referências </h3>
-          <br/>
-          <%= textilize Page.find_by_key('referencias').value if Page.find_by_key('referencias').value.present? %>
-          <hr/>
-        </div>
+        <div class="span4">
+        <h3 style="text-align: center">Sugestões de Leitura: </h3>
+        <hr/>
+        <%= textilize Page.find_by_key('leituras').value if Page.find_by_key('leituras').value.present? %>
+        </div>                       
       </div>
     </div>
   </div>
@@ -205,7 +208,7 @@
 
 <div class="modal hide" id="EPre">
   <div class="modal-header">
-    <h3>Sobre a Conclusão/Pretensão</h3>
+    <h3>Conclusão/Pretensão</h3>
   </div>
   <div class="modal-body">
     <%= textilize Page.find_by_key('EPre').value if Page.find_by_key('EPre').value.present? %>
@@ -217,7 +220,7 @@
 
 <div class="modal hide" id="ERaz">
   <div class="modal-header">
-    <h3>Sobre as Razões</h3>
+    <h3>Razões/Dados</h3>
   </div>
   <div class="modal-body">
     <%= textilize Page.find_by_key('ERaz').value if Page.find_by_key('ERaz').value.present? %>
@@ -229,7 +232,7 @@
 
 <div class="modal hide" id="EGar">
   <div class="modal-header">
-    <h3>Sobre a Garantia/Regra de Inferência</h3>
+    <h3>Garantia/Regra de Inferência</h3>
   </div>
   <div class="modal-body">
     <%= textilize Page.find_by_key('EGar').value if Page.find_by_key('EGar').value.present? %>
@@ -241,7 +244,7 @@
 
 <div class="modal hide" id="ERes">
   <div class="modal-header">
-    <h3>Sobre o Respaldo</h3>
+    <h3>Respaldo</h3>
   </div>
   <div class="modal-body">
     <%= textilize Page.find_by_key('ERes').value if Page.find_by_key('ERes').value.present? %>
@@ -253,7 +256,7 @@
 
 <div class="modal hide" id="ERef">
   <div class="modal-header">
-    <h3>Sobre as Condições de Refutação</h3>
+    <h3>Condições de Refutação</h3>
   </div>
   <div class="modal-body">
     <%= textilize Page.find_by_key('ERef').value if Page.find_by_key('ERef').value.present? %>
@@ -265,10 +268,49 @@
 
 <div class="modal hide" id="EQua">
   <div class="modal-header">
-    <h3>Sobre o Qualificador</h3>
+    <h3>Qualificador</h3>
   </div>
   <div class="modal-body">
     <%= textilize Page.find_by_key('EQua').value if Page.find_by_key('EQua').value.present? %>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+  </div>
+</div>
+
+<div class="modal hide" id="conceito">
+  <div class="modal-header">
+    <h3>Conceito de argumento</h3>
+  </div>
+  <div class="modal-body">
+    <%= textilize Page.find_by_key('conceito_t').value if Page.find_by_key('conceito_t').value.present? %>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+  </div>
+</div>
+
+<div class="modal hide" id="estrutura">
+  <div class="modal-header">
+    <h3>Estrutura de um argumento</h3>
+  </div>
+  <div class="modal-body">
+    <%= textilize Page.find_by_key('estrutura_t').value if Page.find_by_key('estrutura_t').value.present? %>
+    <div align="center">
+      <%= image_tag("Estrutura.png", :size => "250x400", :alt => "Estrutura de um Argumento") %>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+  </div>
+</div>
+
+<div class="modal hide" id="qualidade">
+  <div class="modal-header">
+    <h3>Qualidade de argumentos</h3>
+  </div>
+  <div class="modal-body">
+    <%= textilize Page.find_by_key('qualidade_t').value if Page.find_by_key('qualidade_t').value.present? %>
   </div>
   <div class="modal-footer">
     <a href="#" class="btn" data-dismiss="modal">fechar</a>

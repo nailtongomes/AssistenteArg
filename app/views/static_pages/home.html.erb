@@ -1,113 +1,117 @@
 <% provide(:title, 'Assistente de Argumento || Argumentação') %>
 <% if signed_in? %>
 <div class="row">
-	<aside class="span12">
-		<div>
-			<% if @f.present? && current_user.show_fact? %>
-			<a class="close" data-dismiss="alert" href="#">&times;</a>
-			<h1>Caso Gerador [<%= link_to "#C#{@f.id}", @f %>]</h1>
-			<%= render 'facts/fact' %>
-			<% end %>
-		</div>
-	</aside>
-	<aside class="span4">
-		<section>
-			<%= render 'shared/user_info' %>
-		</section>
-		<section>
-			<%= render 'shared/stats' %>
-		</section>
-		<section>
-			<%= render 'shared/argument_form' %>
-		</section>
-		<hr/>
-		<div align="center">
-			<%= link_to 'Mensagens', msgs_path, class: "btn btn-large" %>
-			<%= link_to 'Melhores Argumentos', top_url, class: "btn btn-large btn-info" %><hr/>
-			<%= link_to 'Documentos', documents_path, class: "btn btn-large btn-success" %>
-			<hr/>
-			<% if current_user.admin? %>
-			<%= link_to 'Backup', backup_url, class: "btn btn-large btn-danger", confirm: "Tem certeza?" %>
-			<% end %>
-		</div>
-	</aside>
-	<div class="span8">
-		<h3>Histórico de Argumentos</h3>
-		<%= render 'shared/feed' %>
-	</div>
+  <aside class="offset1 span10 offset1">
+    <div>
+      <% if @f.present? && current_user.show_fact? %>
+      <a class="close" data-dismiss="alert" href="#">&times;</a>
+      <h1>Desafio de Argumentação [<%= link_to "#C#{@f.id}", @f %>]</h1>
+      <%= render 'facts/fact' %>
+      <div class="pull-right">
+        <%= link_to 'Participar', @f, :class => "btn btn-primary btn-large" %>        
+      </div>
+      <% end %>
+    </div>
+  </aside>
+  <aside class="offset1 span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+    <section>
+      <%= render 'shared/argument_form' %>
+    </section>
+    <hr/>
+    <div align="center">
+      <%= link_to 'Mensagens', msgs_path, class: "btn btn-large" %>
+      <%= link_to 'Melhores Argumentos', top_url, class: "btn btn-large btn-info" %>
+      <hr/>
+      <%= link_to 'Documentos', documents_path, class: "btn btn-large btn-success" %>
+      <hr/>
+      <% if current_user.admin? %>
+      <%= link_to 'Backup', backup_url, class: "btn btn-large btn-danger", confirm: "Tem certeza?" %>
+      <% end %>
+    </div>
+  </aside>
+  <div class="span6">
+    <h3>Histórico de Argumentos</h3>
+    <%= render 'shared/feed' %>
+  </div>
 </div>
 <% else %>
 <div class="row">
-	<div class="span11">
-		<div id="myCarousel" class="carousel slide">
-			<!-- Carousel items -->
-			<div class="carousel-inner">
-				<div class="active item" align="center" style="height: 400px">
-					<%= image_tag("intro.png", :size => "800x394", :alt => "Introdução ao Arg.", :title => "Introdução ao Arg.") %>
-				</div>
-				<div class="item" align="center" style="height: 400px">
-					<%= image_tag("intro1.png", :size => "800x394", :alt => "Histórico de Argumentos", :title => "Histórico de Argumentos") %>
-				</div>
-				<div class="item" align="center" style="height: 400px">
-					<%= image_tag("intro2.png", :size => "800x394", :alt => "Avaliação de Argumentos", :title => "Avaliação de Argumentos") %>
-				</div>
-				<div class="item" align="center" style="height: 400px">
-					<%= image_tag("intro3.png", :size => "800x394", :alt => "Casos Geradores", :title => "Casos Geradores") %>
-				</div>
-				<div class="item" align="center" style="height: 400px">
-					<%= image_tag("intro4.png", :size => "800x394", :alt => "Guia de Argumentação", :title => "Guia de Argumentação") %>
-				</div>
-				<div class="item" align="center" style="height: 400px">
-					<%= image_tag("intro5.png", :size => "800x394", :alt => "Aprimorando Argumento", :title => "Aprimorando Argumento") %>
-				</div>
-			</div>
-			<!-- Carousel nav -->
-			<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-			<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-		</div>
-	</div>
-	<div class="span1">
-		<a href="https://twitter.com/share" class="twitter-share-button" data-via="nailtongomes" data-lang="pt-BR" data-text="Arg. - O Assistente de Argumentação Jurídica"
-		data-related="anywhereTheJavascriptAPI" data-count="vertical">Tweet</a>
-		<hr/>
-		<div class="fb-like" data-send="false" data-layout="box_count" data-width="56px" data-show-faces="false"></div>
-	</div>
-	<div class="span3 offset5">
+  <div class="span11">
+    <div id="myCarousel" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="active item" align="center" style="height: 400px">
+          <%= image_tag("intro.png", :size => "800x394", :alt => "Introdução ao Arg.", :title => "Introdução ao Arg.") %>
+        </div>
+        <div class="item" align="center" style="height: 400px">
+          <%= image_tag("intro1.png", :size => "800x394", :alt => "Histórico de Argumentos", :title => "Histórico de Argumentos") %>
+        </div>
+        <div class="item" align="center" style="height: 400px">
+          <%= image_tag("intro2.png", :size => "800x394", :alt => "Avaliação de Argumentos", :title => "Avaliação de Argumentos") %>
+        </div>
+        <div class="item" align="center" style="height: 400px">
+          <%= image_tag("intro3.png", :size => "800x394", :alt => "Casos Geradores", :title => "Casos Geradores") %>
+        </div>
+        <div class="item" align="center" style="height: 400px">
+          <%= image_tag("intro4.png", :size => "800x394", :alt => "Guia de Argumentação", :title => "Guia de Argumentação") %>
+        </div>
+        <div class="item" align="center" style="height: 400px">
+          <%= image_tag("intro5.png", :size => "800x394", :alt => "Aprimorando Argumento", :title => "Aprimorando Argumento") %>
+        </div>
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+  </div>
+  <div class="span1">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="nailtongomes" data-lang="pt-BR" data-text="Arg. - O Assistente de Argumentação Jurídica"
+    data-related="anywhereTheJavascriptAPI" data-count="vertical">Tweet</a>
+    <hr/>
+    <div class="fb-like" data-send="false" data-layout="box_count" data-width="56px" data-show-faces="false"></div>
+  </div>
+  <div class="span3 offset5">
 
-	</div>
-	<div class="span6" align="center" >
-		<%= link_to "Cadastre-se", signup_path, class: "btn btn-large btn-primary" %>
-	</div>
-	<div class="span6">
-		<blockquote class="pull-right">
-			<%= textilize Page.find_by_key('frase').value if Page.find_by_key('frase').value.present? %>
-		</blockquote>
-	</div>
+  </div>
+  <div class="span6" align="center" >
+    <%= link_to "Cadastre-se", signup_path, class: "btn btn-large btn-primary" %>
+  </div>
+  <div class="span6">
+    <blockquote class="pull-right">
+      <%= textilize Page.find_by_key('frase').value if Page.find_by_key('frase').value.present? %>
+    </blockquote>
+  </div>
 
 </div>
 <% content_for :script do %>
 <div id="fb-root"></div>
 <script>
-	( function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id))
-				return;
-			js = d.createElement(s);
-			js.id = id;
-			js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
+  ( function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id))
+        return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 </script>
 <script>
-	!function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (!d.getElementById(id)) {
-			js = d.createElement(s);
-			js.id = id;
-			js.src = "https://platform.twitter.com/widgets.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}
-	}(document, "script", "twitter-wjs"); 
+  ! function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+  }(document, "script", "twitter-wjs"); 
 </script>
 <% end %>
 <% end %>

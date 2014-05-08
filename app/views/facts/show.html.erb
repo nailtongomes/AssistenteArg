@@ -7,24 +7,28 @@
 			<%= link_to "Editar", edit_fact_path(@fact), class: "btn btn-small" %>
 			<%= link_to "Excluir", @fact, method: :delete, confirm: "Tem certeza?", class: "btn btn-small btn-danger" %>
 			<% end %> <a class="btn btn-primary" data-toggle="modal" href="#myModal" >Argumentar</a></h3>
+			<hr/><h3 style="text-align: center">Síntese do Caso</h3><hr/>
 			<p>
 				<%= textilize @fact.content %>
 			</p>
 			<hr/>
-			<h3>Problema</h3>
+			<h3 style="text-align: center">Problema</h3><hr/>
 			<p>
 				<%= textilize @fact.problem %>
 			</p>
 			<% if @fact.orientation.present? && @fact.orientation.size > 10 %>
 			<hr/>
-			<h3>Orientação</h3>
+			<h3 style="text-align: center">Orientação</h3><hr/>
 			<p>
 				<%= textilize @fact.orientation %>
 			</p>
 			<% end %>			
 		</div>
-		<div class="span9">			
-			<h3>Argumentos Tempestivos (<%= @arguments_in.count.to_s %>) - Data de Termo: [<%= @fact.fin_term.strftime("%d/%m/%Y - %H:%M") %>]</h3>			
+</div>		
+<div class="row">
+		<aside class="offset1 span5">			
+			<h3 style="text-align: center">Argumentos do Desafio (<%= @arguments_in.count.to_s %>)</h3>
+			<p class="label label-important" style="text-align: center">Inseridos entre [<%= @fact.ini_term.strftime("%d/%m/%Y - %H:%M") %>] e [<%= @fact.fin_term.strftime("%d/%m/%Y - %H:%M") %>]</p>			
 			<% if @arguments_in.any? %>
 			<ol class="arguments">
 				<%= render partial: 'shared/feed_item2', collection: @arguments_in %>
@@ -32,11 +36,13 @@
 			<% else %>
 			<hr/>
 			<ol class="arguments">				
-				Não há argumentos para este caso inseridos antes da data de termo...
+				Ainda não há argumentos inseridos no Desafio.
 			</ol>
 			<% end %>
 			<hr/>
-			<h3>Argumentos Intempestivos (<%=@arguments_out.count.to_s %>)</h3>						
+			</aside>
+			<aside class="span5 offset1">  
+			<h3 style="text-align: center">Outros argumentos (<%=@arguments_out.count.to_s %>)</h3>						
 			<% if @arguments_out.any? %>
 			<ol class="arguments">
 				<%= render partial: 'shared/feed_item2', collection: @arguments_out %>
@@ -44,12 +50,13 @@
 			<% else %>
 			<hr/>
 			<ol class="arguments">
-				Não há argumentos para este caso inseridos após a data de termo...
+				Não há outros argumentos para este caso.
 			</ol>
 			<% end %>			
-		</div>
+		</aside>
 	</div>
 </div>
+
 <div class="modal hide" id="myModal">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal">

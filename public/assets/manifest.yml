@@ -31,8 +31,6 @@ uni.png: uni-2ed93d6265523afab55012b1b97e517c.png
 uni/index.png: uni-2ed93d6265523afab55012b1b97e517c.png
 application.js: application-7dfb0a7e51c039f74fbda2dbbc0c320b.js
 application/index.js: application-7dfb0a7e51c039f74fbda2dbbc0c320b.js
-sitemap.xml: sitemap-095fbdc4ae195a58b5ff893ab47e65c4.xml
-sitemap/index.xml: sitemap-095fbdc4ae195a58b5ff893ab47e65c4.xml
 ajaxful_rating.css: ajaxful_rating-d7d6e0ff03fb72c5fea7ee2bd0a9ec78.css
 ajaxful_rating/index.css: ajaxful_rating-d7d6e0ff03fb72c5fea7ee2bd0a9ec78.css
 application.css: application-45d32ec1bbdfa4d8182d92412ccfe26c.css
