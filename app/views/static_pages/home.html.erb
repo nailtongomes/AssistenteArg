@@ -1,4 +1,4 @@
-<% provide(:title, 'Assistente de Argumento || Argumentação') %>
+﻿<% provide(:title, 'Assistente de Argumento || Argumentação') %>
 <% if signed_in? %>
 <div class="row">
   <aside class="offset1 span10 offset1">
@@ -100,8 +100,8 @@
       js.id = id;
       js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 <script>
   ! function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -112,6 +112,20 @@
       fjs.parentNode.insertBefore(js, fjs);
     }
   }(document, "script", "twitter-wjs"); 
+</script>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "SoftwareApplication",
+  "name" : "ARG - Assistente de Argumentos",
+  "image" : "http://assistentearg.herokuapp.com/assets/intro-b21d49cfe11a952b2dde41e7d87c8323.png",
+  "url" : "http://assistentearg.herokuapp.com",
+  "author" : {
+    "@type" : "Person",
+    "name" : "Nailton Gomes Silva"
+  }
+}
 </script>
 <% end %>
 <% end %>
