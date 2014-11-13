@@ -250,7 +250,13 @@
         other: Rascunhos de Argumentos        
       fact:
         one: Caso
-        other: Casos        
+        other: Casos   
+      scheme:
+        one: Esquema
+        other: Esquemas 
+      document:
+        one: Documento
+        other: Documentos        
     attributes:
       user: 
         name: "Nome"        
@@ -270,7 +276,15 @@
       fact: 
         content: "Fato"
         problem: "Problema"
-        ini_term_date: "Data de Publicação"
-        fin_term_date: "Data de Termo"
-        ini_term_time: "Horário de Publicação"
-        fin_term_time: "Horário de Termo"
+        ini_term_date: "Data de Início"
+        fin_term_date: "Data de Término"
+        ini_term_time: "Horário de Início"
+        fin_term_time: "Horário de Término"
+      scheme:
+        name: "Nome"
+        form: "Forma"
+        cq: "Questões Críticas"
+      document:
+        title: "Título"
+        subject: "Descrição"
+        body: "Conteúdo"
