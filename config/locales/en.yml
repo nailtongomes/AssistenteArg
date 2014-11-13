@@ -1,207 +1,176 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 en:
-  empty: "Não temos nenhum %{model} ainda."
-  confirm: Tem certeza?
-  edit: Editar
-  destroy: Apagar
-  cancel: Cancelar
-  new: Criar %{model}
-  error_message_header: "%{count} erro(s) impediram este %{model} de ser gravado:"
-  or: ou
-
-  ajaxful_rating:
-    helper:
-      global_average: "Nota Média: %{value}/%{max}"
-      user_rating: "Sua nota: %{value}/%{max}"
-      hover: "Nota %{value}/%{max}"
-      no_ratings: "Não avaliado..."  
-  
-  will_paginate:
-    previous_label: "&#8592; Anterior"
-    next_label: "Próximo &#8594;"
-    page_gap: "&hellip;"    
-    page_entries_info:
-      single_page:
-        zero:  "Nenhum %{model} encontrado"
-        one:   "Exibindo 1 %{model}"
-        other: "Exibindo todos os %{count} %{model}"
-      single_page_html:
-        zero:  "Nenhum %{model} encontrado"
-        one:   "Exibindo <b>1</b> %{model}"
-        other: "Exibindo <b>todos os&nbsp;%{count}</b> %{model}"
-
-      multi_page: "Exibindo %{model} %{from} - %{to} de %{count} no total"
-      multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
   date:
     abbr_day_names:
-    - Dom
-    - Seg
-    - Ter
-    - Qua
-    - Qui
-    - Sex
-    - Sáb
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
     abbr_month_names:
-    - 
+    -
     - Jan
-    - Fev
+    - Feb
     - Mar
-    - Abr
-    - Mai
+    - Apr
+    - May
     - Jun
     - Jul
-    - Ago
-    - Set
-    - Out
+    - Aug
+    - Sep
+    - Oct
     - Nov
-    - Dez
+    - Dec
     day_names:
-    - Domingo
-    - Segunda
-    - Terça
-    - Quarta
-    - Quinta
-    - Sexta
-    - Sábado
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
     formats:
-      default: ! '%d/%m/%Y'
-      long: ! '%d de %B de %Y'
-      short: ! '%d de %B'
+      default: ! '%Y-%m-%d'
+      long: ! '%B %d, %Y'
+      short: ! '%b %d'
     month_names:
-    - 
-    - Janeiro
-    - Fevereiro
-    - Março
-    - Abril
-    - Maio
-    - Junho
-    - Julho
-    - Agosto
-    - Setembro
-    - Outubro
-    - Novembro
-    - Dezembro
+    -
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
     order:
-    - :day
-    - :month
     - :year
+    - :month
+    - :day
   datetime:
     distance_in_words:
       about_x_hours:
-        one: aproximadamente 1 hora
-        other: aproximadamente %{count} horas
+        one: about 1 hour
+        other: about %{count} hours
       about_x_months:
-        one: aproximadamente 1 mês
-        other: aproximadamente %{count} meses
+        one: about 1 month
+        other: about %{count} months
       about_x_years:
-        one: aproximadamente 1 ano
-        other: aproximadamente %{count} anos
+        one: about 1 year
+        other: about %{count} years
       almost_x_years:
-        one: quase 1 ano
-        other: quase %{count} anos
-      half_a_minute: meio minuto
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
       less_than_x_minutes:
-        one: menos de um minuto
-        other: menos de %{count} minutos
+        one: less than a minute
+        other: less than %{count} minutes
       less_than_x_seconds:
-        one: menos de 1 segundo
-        other: menos de %{count} segundos
+        one: less than 1 second
+        other: less than %{count} seconds
       over_x_years:
-        one: mais de 1 ano
-        other: mais de %{count} anos
+        one: over 1 year
+        other: over %{count} years
       x_days:
-        one: 1 dia
-        other: ! '%{count} dias'
+        one: 1 day
+        other: ! '%{count} days'
       x_minutes:
-        one: 1 minuto
-        other: ! '%{count} minutos'
+        one: 1 minute
+        other: ! '%{count} minutes'
       x_months:
-        one: 1 mês
-        other: ! '%{count} meses'
+        one: 1 month
+        other: ! '%{count} months'
       x_seconds:
-        one: 1 segundo
-        other: ! '%{count} segundos'
+        one: 1 second
+        other: ! '%{count} seconds'
     prompts:
-      day: Dia
-      hour: Hora
-      minute: Minuto
-      month: Mês
-      second: Segundo
-      year: Ano
-  errors: &errors
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors:
     format: ! '%{attribute} %{message}'
     messages:
-      accepted: deve ser aceito
-      blank: não pode ficar em branco
-      confirmation: não está de acordo com a confirmação
-      empty: não pode ficar vazio
-      equal_to: deve ser igual a %{count}
-      even: deve ser par
-      exclusion: não está disponível
-      greater_than: deve ser maior que %{count}
-      greater_than_or_equal_to: deve ser maior ou igual a %{count}
-      inclusion: não está incluído na lista
-      invalid: não é válido
-      less_than: deve ser menor que %{count}
-      less_than_or_equal_to: deve ser menor ou igual a %{count}
-      not_a_number: não é um número
-      not_an_integer: não é um número inteiro
-      odd: deve ser ímpar
-      record_invalid: ! 'A validação falhou: %{errors}'
-      taken: já está em uso
-      too_long: ! 'é muito longo (máximo: %{count} caracteres)'
-      too_short: ! 'é muito curto (mínimo: %{count} caracteres)'
-      wrong_length: não possui o tamanho esperado (%{count} caracteres)
+      accepted: must be accepted
+      blank: can't be blank
+      present: must be blank
+      confirmation: ! "doesn't match %{attribute}"
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      record_invalid: ! 'Validation failed: %{errors}'
+      restrict_dependent_destroy:
+        one: "Cannot delete record because a dependent %{record} exists"
+        many: "Cannot delete record because dependent %{record} exist"
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+      other_than: "must be other than %{count}"
     template:
-      body: ! 'Por favor, verifique o(s) seguinte(s) campo(s):'
+      body: ! 'There were problems with the following fields:'
       header:
-        one: ! 'Não foi possível gravar %{model}: 1 erro'
-        other: ! 'Não foi possível gravar %{model}: %{count} erros.'
+        one: 1 error prohibited this %{model} from being saved
+        other: ! '%{count} errors prohibited this %{model} from being saved'
   helpers:
     select:
-      prompt: Por favor selecione
+      prompt: Please select
     submit:
-      create: Criar %{model}
-      submit: Salvar %{model}
-      update: Atualizar %{model}
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
   number:
     currency:
       format:
-        delimiter: .
-        format: ! '%u %n'
+        delimiter: ! ','
+        format: ! '%u%n'
         precision: 2
-        separator: ! ','
+        separator: .
         significant: false
         strip_insignificant_zeros: false
-        unit: R$
+        unit: $
     format:
-      delimiter: .
+      delimiter: ! ','
       precision: 3
-      separator: ! ','
+      separator: .
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
         format: ! '%n %u'
         units:
-          billion:
-            one: bilhão
-            other: bilhões
-          million:
-            one: milhão
-            other: milhões
-          quadrillion:
-            one: quatrilhão
-            other: quatrilhões
-          thousand: mil
-          trillion:
-            one: trilhão
-            other: trilhões
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
           unit: ''
       format:
-        delimiter: .
-        precision: 2
+        delimiter: ''
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
       storage_units:
@@ -216,62 +185,20 @@ en:
           tb: TB
     percentage:
       format:
-        delimiter: .
+        delimiter: ''
+        format: "%n%"
     precision:
       format:
-        delimiter: .
+        delimiter: ''
   support:
     array:
-      last_word_connector: ! ' e '
-      two_words_connector: ! ' e '
+      last_word_connector: ! ', and '
+      two_words_connector: ! ' and '
       words_connector: ! ', '
   time:
-    am: ''
+    am: am
     formats:
-      default: ! '%A, %d de %B de %Y, %H:%M h'
-      long: ! '%A, %d de %B de %Y, %H:%M h'
-      short: ! '%d/%m, %H:%M h'
-    pm: ''
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-  activerecord:
-    errors:
-      <<: *errors
-    models:
-      user:
-        one: Usuário
-        other: Usuários
-      argument:
-        one: Argumento
-        other: Argumentos
-      sandarg:
-        one: Rascunho de Argumento
-        other: Rascunhos de Argumentos        
-      fact:
-        one: Caso
-        other: Casos        
-    attributes:
-      user: 
-        name: "Nome"        
-        password: "Senha"
-        password_confirmation: "Confimação da Senha"
-        email: "E-Mail"        
-      argument: 
-        content: "Texto do Argumento"
-      sandarg: 
-        claim: "Pretensão"
-        ground: "Razão"
-        warrant: "Garantia"
-        backing: "Respaldo"
-        qualifier: "Qualificador"
-        rebuttal: "Refutador"
-        content: "Texto do Rascunho do Argumento"               
-      fact: 
-        content: "Fato"
-        problem: "Problema"
-        ini_term_date: "Data de Publicação"
-        fin_term_date: "Data de Termo"
-        ini_term_time: "Horário de Publicação"
-        fin_term_time: "Horário de Termo"
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm
