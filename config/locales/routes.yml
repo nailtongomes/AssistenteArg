@@ -1,0 +1,17 @@
+en:
+  routes:
+pt-BR:
+  routes:
+    signin: entrar
+    signup: registro
+    help: ajuda
+    users: usuarios
+    arguments: argumentos
+    schemes: esquemas
+    recover: recuperar
+    facts: fatos
+    sandargs: rascunhos
+    new: novo
+    edit: editar
+    destroy: destruir
+    cancel: cancelar
