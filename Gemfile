@@ -9,6 +9,7 @@ gem 'heroku'
 gem 'RedCloth'
 gem 'ajaxful_rating', '3.0.0.beta3'
 gem 'rails-i18n', '~> 3.0.0' # For 3.x
+gem 'rails-translate-routes'
 
 group :development do
   gem 'sqlite3', '1.3.5'
