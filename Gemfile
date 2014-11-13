@@ -8,6 +8,7 @@ gem 'bootstrap-will_paginate', '0.0.5'
 gem 'heroku'
 gem 'RedCloth'
 gem 'ajaxful_rating', '3.0.0.beta3'
+gem 'rails-i18n', '~> 3.0.0' # For 3.x
 
 group :development do
   gem 'sqlite3', '1.3.5'
