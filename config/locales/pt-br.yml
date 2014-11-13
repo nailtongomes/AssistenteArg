@@ -1,5 +1,5 @@
 # File for Brazilian-Portuguese.
-pt:
+"pt-BR":
   empty: "Não temos nenhum %{model} ainda."
   confirm: Tem certeza?
   edit: Editar
