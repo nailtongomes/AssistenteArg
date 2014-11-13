@@ -3,6 +3,7 @@ Lembrar de Criar Esquemas por Idiomas.
 class AddFieldsToSchemes < ActiveRecord::Migration
   def change
     add_column :idiom, :string, :default => "pt-BR"
+    add_column :source, :string
   end  
 end
 
