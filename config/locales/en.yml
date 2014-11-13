@@ -202,3 +202,59 @@ en:
       long: ! '%B %d, %Y %H:%M'
       short: ! '%d %b %H:%M'
     pm: pm
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
+    models:
+      user:
+        one: User
+        other: Users
+      argument:
+        one: Argument
+        other: Arguments
+      sandarg:
+        one: Draft
+        other: Drafts        
+      fact:
+        one: Fact
+        other: Facts
+      scheme:
+        one: Scheme
+        other: Schemes 
+      document:
+        one: Document
+        other: Documents
+    attributes:
+      user: 
+        name: "Name"        
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        email: "E-Mail"        
+      argument: 
+        content: "Content"
+      sandarg: 
+        claim: "Claim"
+        ground: "Ground"
+        warrant: "Warrant"
+        backing: "Backing"
+        qualifier: "Qualifier"
+        rebuttal: "Rebuttal"
+        content: "Content"               
+      fact: 
+        content: "Content"
+        problem: "Problem"
+        ini_term_date: "Start date"
+        fin_term_date: "End date"
+        ini_term_time: "Start time"
+        fin_term_time: "End time"
+      scheme:
+        name: "Name"
+        form: "Form"
+        cq: "Critical Question(s)"
+      document:
+        title: "Title"
+        subject: "Description"
+        body: "Content"        
