@@ -1,4 +1,4 @@
-== Bem-vindo ao ARG!
+== Bem-vindo ao ARG! (PT-BR)
 
 O [ ARG ] é uma ferramenta construída em um ambiente virtual com o objetivo de auxiliar na composição de (bons) argumentos.
 
@@ -17,7 +17,7 @@ Acesse em:
 link:http://assistentearg.herokuapp.com.
 
 
-== Welcome to ARG!
+== Welcome to ARG! (EN)
 
 The [ARG] is a tool with the aim of assisting in the composition of (good) arguments.
 
@@ -32,4 +32,4 @@ We want you can make:
 8. Encourage and be encouraged to discuss;
 9. Find good arguments.
 
-link: http: //assistentearg.herokuapp.com.
+link:http://assistentearg.herokuapp.com.
