@@ -1,10 +1,17 @@
-Lembrar de Criar Esquemas por Idiomas.
-
 class AddFieldsToSchemes < ActiveRecord::Migration
   def change
-    add_column :idiom, :string, :default => "pt-BR"
-    add_column :source, :string
+    add_column :lang, :string, :default => "pt-BR"
   end  
 end
 
-I18n.
+class AddFieldsToFacts < ActiveRecord::Migration
+  def change
+    add_column :lang, :string, :default => "pt-BR"
+  end  
+end
+
+class AddFieldsToPages < ActiveRecord::Migration
+  def change
+    add_column :lang, :string, :default => "pt-BR"
+  end  
+end
