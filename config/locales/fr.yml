@@ -5,8 +5,108 @@
 #  - Bruno Michel - http://github.com/nono
 #  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
 # Emended by Benjamin des Gachons and Patrick Chew : <http://www.fitima.org/docs/fiche.pdf>
-
 fr:
+
+  translation: 
+    pt-BR: "Português (BR)"
+    en: "English (EN)"
+    es-419: "Español (ES)"
+    fr: "Français (FR)"
+  
+  home: "Assistant de Argument"
+  challenge: "Défi d'arguments"
+  join: "Participer"
+  msgs: "Messages"
+  best: "Meilleurs arguments"
+  docs: "Documents"
+  timeline: "Timeline"
+  signup: "Signer"
+  signin: "Connecter"
+  signout: "Déconnecter"
+  following: "Admirateurs"
+  followers: "Accompagnateur" #parei aqui
+  error_timeline: "Lo sentimos, un error ha prohibido el rescate de su línea de tiempo..."
+  rate: "Valorar"
+  created_at: "Hace incluido"
+  created_by: "Incluido por"
+  max_char: "*Número máximo de caracteres: 1100"
+  arg_content: "Su argumento va aquí"
+  arg_help: "¿Necesita ayuda?"  #parei aqui
+  about: "About"
+  contact: "Contact"
+  by: "par"
+  guide: "Manuel"
+  search: "Rechercher"
+  profile: "Profil"
+  draft: "Ébauche"
+  config: "Configuration"
+  help: "Help"
+  schemes_arg: "Schémas d'argument"
+  cq: "Questions critiques"
+  no_schemes: "Aucun argument n'a été trouvé..."
+    
+  empty: "Aucun résultat n'a été trouvé..."
+  confirm: "Estás seguro?"
+  edit: "Editar"
+  destroy: "Apagar"
+  delete: "Apagar"
+  cancel: "Cancelar"
+  new: "Nuevo"
+  save: "Insertar"
+  wait: "Sostener..."
+
+  activerecord:
+    models:
+      user:
+        one: Usuario
+        other: Usuarios
+      argument:
+        one: Argumento
+        other: Argumentos
+      sandarg:
+        one: Borrador
+        other: Borradores        
+      fact:
+        one: Hecho
+        other: Hechos
+      scheme:
+        one: Esquema
+        other: Esquema 
+      document:
+        one: Documento
+        other: Documentos
+    attributes:
+      user: 
+        name: "Nombre"        
+        password: "Senha"
+        password_confirmation: "Confirmación de senha"
+        email: "E-Mail"        
+      argument: 
+        content: "Contenido"
+      sandarg: 
+        claim: "Conclusion"
+        ground: "Donnée"
+        warrant: "Garantie"
+        backing: "Fondement"
+        qualifier: "Indicateur de force"
+        rebuttal: "Réfutation "
+        content: "Contenido"               
+      fact: 
+        content: "Contenido"
+        problem: "Problema"
+        ini_term_date: "Fecha de inicio"
+        fin_term_date: "Fecha de finalización"
+        ini_term_time: "Hora de inicio"
+        fin_term_time: "Hora de finalización"
+      scheme:
+        name: "Nombre"
+        form: "Forma"
+        cq: "Cuestiones críticas"
+      document:
+        title: "Título"
+        subject: "Descripción"
+        body: "Contenido"
+
   date:
     abbr_day_names:
       - dim
