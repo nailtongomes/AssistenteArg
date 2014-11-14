@@ -15,3 +15,21 @@ Através dele, atualmente, é possível:
 
 Acesse em:
 link:http://assistentearg.herokuapp.com.
+
+
+== Welcome to ARG!
+
+The [ARG] is a tool with the aim of assisting in the composition of (good) arguments.
+
+We want you can make:
+1. Save arguments without any complication;
+2. Preview arguments clearly and concisely;
+3. Follow the arguments of other users;
+4. Get help make good arguments and to improve them;
+5. Learn theories of argumentation;
+6. Know the schemes of arguments;
+7. Receive and provide reviews of arguments;
+8. Encourage and be encouraged to discuss;
+9. Find good arguments.
+
+link: http: //assistentearg.herokuapp.com.
