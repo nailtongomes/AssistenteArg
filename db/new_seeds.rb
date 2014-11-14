@@ -245,6 +245,26 @@ Scheme.create!(:name => "Indicios/Vestigios",
 }
 )
 
+Scheme.create!(:name => "Sign",
+:form => %{<p><b><span class="caps">PREMISES</span></b></p> <p>A is true in this situation</p>
+          <p>Event B is generally indicated as true when its sign, A, is true in this kind of situation<br></p> 
+          <p><b>CONCLUSION</b></p> <p>B is true in this situation<br></p>      
+},
+:cq =>  %{<p>a) What is the strength of the correlation between A and B?</p> 
+          <p>b) Are there any events other than B that would more reliably account for A?</p>
+},
+:lang => "en"
+)
+
+Scheme.create!(:name => "Indicacion",
+:form => %{<p><b><span class="caps">PREMISSAS</span></b></p> <p>A es verdadero en esta situación</p><p>Evento B se indica generalmente como cierto cuando su signo, A, es cierto en este tipo de situación<br></p> <p><b>CONCLUSIÓN</b></p> <p>B es cierto en esta situación<br></p>      
+},
+:cq =>  %{<p>a) ¿Cuál es la fuerza de la correlación entre A y B?</p> 
+          <p>b) ¿Hay eventos que no sea B que cuenta con mayor fiabilidad para A?</p>
+},
+:lang => "es-419"
+)
+
 Scheme.create!(:name => "Inducao",
 :form => %{<b><span class="caps">PREMISSA</span></b><br>A maioria dos "F"s observados são "G"s<br><br><b>CONCLUSÃO</b><br>"F"s geralmente são "G"s<br>      
 },
