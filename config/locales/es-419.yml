@@ -8,6 +8,105 @@
 # Corrected by {name} : {email}
 
 es-419:
+  translation: 
+    pt-BR: "Português (BR)"
+    en: "English (EN)"
+    es-419: "Español (ES)"
+  
+  home: "Asistente de la Argumentación"
+  challenge: "Desafío de Argumentos"
+  join: "Participar"
+  msgs: "Mensajes"
+  best: "Mejores Argumentos"
+  docs: "Documentos"
+  timeline: "Línea de tiempo"
+  signup: "Regístrate"
+  signin: "Entrar"
+  signout: "Salir"
+  following: "Siguiendo"
+  followers: "Seguidores"
+  error_timeline: "Lo sentimos, un error ha prohibido el rescate de su línea de tiempo..."
+  rate: "Valorar"
+  created_at: "Hace incluido"
+  created_by: "Incluido por"
+  max_char: "*Número máximo de caracteres: 1100"
+  arg_content: "Su argumento va aquí"
+  arg_help: "¿Necesita ayuda?"
+  about: "Sobre"
+  contact: "Contacto"
+  by: "de"
+  guide: "Guia"
+  search: "Investigacion"
+  profile: "Perfil"
+  draft: "Borrador"
+  config: "Ajustes"
+  help: "Ayuda"
+  schemes_arg: "Esquemas de los argumentos"
+  cq: "Cuestiones críticas"
+  no_schemes: "No se encontraron esquemas de argumentos..."
+    
+  empty: "No se encontraron resultados."
+  confirm: Estás seguro?
+  edit: Editar
+  destroy: Apagar
+  delete: Apagar
+  cancel: Cancelar
+  new: "Nuevo"
+  save: "Insertar"
+  wait: "Sostener..."
+
+  activerecord:
+    models:
+      user:
+        one: Usuario
+        other: Usuarios
+      argument:
+        one: Argumento
+        other: Argumentos
+      sandarg:
+        one: Borrador
+        other: Borradores        
+      fact:
+        one: Hecho
+        other: Hechos
+      scheme:
+        one: Esquema
+        other: Esquema 
+      document:
+        one: Documento
+        other: Documentos
+    attributes:
+      user: 
+        name: "Nombre"        
+        password: "Senha"
+        password_confirmation: "Confirmación de senha"
+        email: "E-Mail"        
+      argument: 
+        content: "Contenido"
+      sandarg: 
+        claim: "Propósito"
+        ground: "Prémisse"
+        warrant: "Garantía"
+        backing: "Refuerzo"
+        qualifier: "Calificador"
+        rebuttal: "Refutación"
+        content: "Contenido"               
+      fact: 
+        content: "Contenido"
+        problem: "Problema"
+        ini_term_date: "Fecha de inicio"
+        fin_term_date: "Fecha de finalización"
+        ini_term_time: "Hora de inicio"
+        fin_term_time: "Hora de finalización"
+      scheme:
+        name: "Nombre"
+        form: "Forma"
+        cq: "Cuestiones críticas"
+      document:
+        title: "Título"
+        subject: "Descripción"
+        body: "Contenido"
+
   date:
     abbr_day_names:
     - dom

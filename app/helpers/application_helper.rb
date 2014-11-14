@@ -19,9 +19,9 @@ module ApplicationHelper
     I18n.available_locales.each do |locale|
       locale_key = "translation.#{locale}"
       if locale == I18n.locale
-        links << link_to(I18n.t(locale_key), "#", class: "btn disabled")
+        links << link_to(I18n.t(locale_key), "#", class: "disabled")
       else
-        links << link_to(I18n.t(locale_key), url_for(locale: locale.to_s), class: "btn")
+        links << link_to(I18n.t(locale_key), url_for(locale: locale.to_s))
       end
     end
     links.join("\n").html_safe

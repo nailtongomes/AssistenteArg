@@ -46,7 +46,7 @@
 			jQuery(document).ready(function() {
 				jQuery(function() {
 					var scrollDiv = document.createElement("div");
-					jQuery(scrollDiv).attr("id", "toTop").html("^ Subir").appendTo("body");
+					jQuery(scrollDiv).attr("id", "toTop").html("^").appendTo("body");
 					jQuery(window).scroll(function() {
 						if(jQuery(this).scrollTop() != 0) {
 							jQuery("#toTop").fadeIn();

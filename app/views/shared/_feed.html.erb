@@ -7,7 +7,7 @@
 <hr/>
 <% if @argument.errors.any? %>
 <p>
-	Ocorreu um erro que proibiu o resgate do seu histórico de argumentos...
+	<%= :error_timeline %>
 </p>
 <% else %>
 <%= textilize Page.find_by_key('novo_usu').value if Page.find_by_key('novo_usu').value.present? %>

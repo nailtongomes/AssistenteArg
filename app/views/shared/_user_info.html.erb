@@ -5,5 +5,5 @@
   <%= link_to current_user.name, current_user %>
 </h1>
 <span>
-  <%= pluralize(current_user.arguments.count, "argumento") %>
+  <%= pluralize(current_user.arguments.count, t('activerecord.models.argument.one')) %>
 </span>

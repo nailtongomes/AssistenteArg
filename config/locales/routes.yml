@@ -21,3 +21,5 @@ pt-BR:
     edit: editar
     destroy: destruir
     cancel: cancelar
+es-419:
+  routes:

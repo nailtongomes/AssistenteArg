@@ -1,13 +1,13 @@
-<% provide(:title, 'Pesquisa') %>
+<% provide(:title, t(:search)) %>
 <div class="row">
 	<div class="span6 offset2">
 		<%= form_tag arguments_path, :method => 'get' do %>
-			<%= text_field_tag :search, params[:search], :placeholder => "Pesquisar", :size => '90' %>						
+		<%= text_field_tag :search, params[:search], :placeholder => t(:search), :size => '90' %>
 		<% end %>
-	</div>	
+	</div>
 	<div class="span3">
-	<%= link_to 'Melhores Argumentos', top_url, class: "btn btn-large btn-info" %>
-	</div>	
+		<%= link_to t(:best), top_url, class: "btn btn-large btn-info" %>
+	</div>
 	<div class="span10 offset1">
 		<% if @arguments.any? %>
 		<ol>
@@ -18,7 +18,7 @@
 				<div align="right">
 					<table border="1" style="margin-top: 10px">
 						<thead>
-							<td>Nota:</td>
+							<td><%= t(:rate) %></td>
 						</thead>
 						<tbody>
 							<td style="margin-left: 10px"> <%= ratings_for argument, :dimension => :moderador, :show_user_rating => true %> </td>
@@ -26,14 +26,16 @@
 					</table>
 				</div>
 				<% end %>
-				<span class="timestamp">Incluído por <a href="users/<%= argument.user_id %>"><%= User.find_by_id(argument.user_id).name %></a> - há <%= time_ago_in_words(argument.created_at) %> </span>
+				<span class="timestamp"> <%= t(:created_by) %> <a href="users/<%= argument.user_id %>"><%= User.find_by_id(argument.user_id).name %></a> - <%= time_ago_in_words(argument.created_at) %> </span>
 				<hr/>
 			</li>
 			<% end %>
 		</ol>
 		<%= will_paginate @arguments %>
 		<% else %>
-		<p>Sua pesquisa não retornou resultados...</p>
+		<p>
+			<%= t(:empty) %>
+		</p>
 		<% end %>
 	</div>
 </div>

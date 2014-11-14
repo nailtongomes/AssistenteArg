@@ -1,10 +1,10 @@
-<% provide(:title, 'Esquemas de Argumentos') %>
+<% provide(:title, t(:schemes_arg)) %>
 <div class="row">
 	<div class="span10 offset1">
-		<h1>Esquemas de Argumentos</h1>
+		<h1><%= t(:schemes_arg) %></h1>
 		<hr/>
 		<%= form_tag schemes_path, :method => 'get' do %>
-		<%= text_field_tag :search, params[:search], :placeholder => "Pesquisar" %>
+		<%= text_field_tag :search, params[:search], :placeholder => t(:search) %>
 		<% end %>		
 		<% if @schemes.any? %>
 		<div class="accordion" id="accordion2">
@@ -17,8 +17,8 @@
 					<div class="accordion-inner">
 						<% if current_user.present? && current_user.admin? %>
 						<div class="pull-right">
-							<%= link_to "Editar", edit_scheme_path(f), class: "btn btn-small" %>
-							<%= link_to "Excluir", f, method: :delete, confirm: "Tem certeza?", class: "btn btn-small btn-danger" %>
+							<%= link_to t(:edit), edit_scheme_path(f), class: "btn btn-small" %>
+							<%= link_to t(:delete), f, method: :delete, confirm: t(:confirm), class: "btn btn-small btn-danger" %>
 						</div>
 						<% end %>
 						<p>
@@ -26,7 +26,7 @@
 						</p>
 						<% if f.cq.present? %>
 						<hr/>
-						<h4>QUESTÕES CRÍTICAS</h4>
+						<h4> <%= t(:cq).upcase %></h4>
 						<p>
 							<%= textilize f.cq %>
 						</p>
@@ -39,14 +39,14 @@
 		<%= textilize Page.find_by_key('fonte_esq').value if Page.find_by_key('fonte_esq').value.present? %>
 		<% else %>
 		<p>
-			Não há esquemas...
+		<%=	t(:no_schemes)%>
 		</p>
 		<% end %>
 	</div>
 	<% if current_user.present? && current_user.admin? %>
 	<div class="span8 offset2">
 		<hr/>
-		<h1>Incluir Esquema</h1>
+		<h1><%= t(:new) %></h1>
 		<hr/>
 		<%= render 'form' %>
 	</div>

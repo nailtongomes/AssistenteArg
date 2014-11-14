@@ -1,14 +1,14 @@
 <%= form_for(@scheme) do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
-
-<%= f.text_field :name, :placeholder => "Nome ou Título do Esquema" %>
-Forma do Esquema:
-<%= f.text_area :form, :placeholder => "Forma do Esquema", :rows => "5"%>
-Questões Críticas:
-<%= f.text_area :cq, :placeholder => "Questões Críticas", :rows => "5"%>
+<%= t('activerecord.attributes.scheme.name') %>
+<%= f.text_field :name, :placeholder => t('activerecord.attributes.scheme.name') %>
+<%= t('activerecord.attributes.scheme.form') %>
+<%= f.text_area :form, :placeholder => t('activerecord.attributes.scheme.form'), :rows => "5"%>
+<%= t('activerecord.attributes.scheme.cq') %>
+<%= f.text_area :cq, :placeholder => t('activerecord.attributes.scheme.cq'), :rows => "5"%>
 
 <hr/>
 <div class="pull-right">
-	<%= f.submit "Gravar", class: "btn btn-large btn-primary", :disable_with => "Aguarde..." %>
+	<%= f.submit t(:save), class: "btn btn-large btn-primary", :disable_with => t(:wait) %>
 </div>
 <% end %> 

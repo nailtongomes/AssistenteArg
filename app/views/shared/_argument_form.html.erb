@@ -1,10 +1,10 @@
 <%= form_for(@argument) do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
-<span class="label label-important pull-right">*Máximo de Caracteres: 1100</span>
-<%= f.text_area :content, :placeholder => "Argumente aqui...", :maxlength => 1100 %>
+<span class="label label-important pull-right"> <%= t(:max_char) %></span>
+<%= f.text_area :content, :placeholder => t(:arg_content), :maxlength => 1100 %>
 <div class="pull-right">
-	<%= f.submit "Inserir", class: "btn btn-large btn-primary", :disable_with => "Aguarde..." %>
+	<%= f.submit t(:save), class: "btn btn-large btn-primary", :disable_with => t(:wait) %>
 </div>
-<%= link_to "Precisa de ajuda?", sandargs_path, class: "btn btn-large btn-info" %>
+<%= link_to t(:arg_help), sandargs_path, class: "btn btn-large btn-info" %>
 
 <% end %>

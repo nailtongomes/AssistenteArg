@@ -1,11 +1,51 @@
 # File for Brazilian-Portuguese.
 "pt-BR":
-  empty: "Não temos nenhum %{model} ainda."
+  translation: 
+    pt-BR: "Português (BR)"
+    en: "English (EN)"
+    es-419: "Español (ES)"
+  
+  home: "Assistente de Argumentação"
+  challenge: "Desafio de Argumentação"
+  join: "Participar"
+  msgs: "Mensagens"
+  best: "Melhores Argumentos"
+  docs: "Documentos"
+  timeline: "Histórico de Argumentos"
+  signup: "Cadastre-se"
+  signin: "Entrar"
+  signout: "Sair"
+  following: "Seguindo"
+  followers: "Seguidores"
+  error_timeline: "Desculpe, um erro proibiu o resgate do seu histórico de argumentos..."
+  rate: "Avaliar"
+  created_at: "Incluído há"
+  created_by: "Incluído por"
+  max_char: "*Máximo de Caracteres: 1100"
+  arg_content: "Argumente aqui..."
+  arg_help: "Precisa de ajuda?"
+  about: "Sobre"
+  contact: "Contato"
+  by: "por"
+  guide: "Guia"
+  search: "Pesquisar"
+  profile: "Perfil"
+  draft: "Rascunho"
+  config: "Configurações"
+  help: "Ajuda"
+  schemes_arg: "Esquemas de Argumentos"
+  cq: "Questões Críticas"
+  no_schemes: "Não foram encontrados esquemas de argumentos..."
+    
+  empty: "Não foram encontrados resultados."
   confirm: Tem certeza?
   edit: Editar
   destroy: Apagar
+  delete: Excluir
   cancel: Cancelar
-  new: Criar %{model}
+  new: "Novo"
+  save: "Inserir"
+  wait: "Aguarde..."
   error_message_header: "%{count} erro(s) impediram este %{model} de ser gravado:"
   or: ou
 
@@ -232,16 +272,11 @@
       short: ! '%d/%m, %H:%M h'
     pm: ''
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
   activerecord:
-    errors:
-      <<: *errors
     models:
       user:
-        one: Usuário
-        other: Usuários
+        one: Usuario
+        other: Usuarios
       argument:
         one: Argumento
         other: Argumentos
@@ -281,8 +316,8 @@
         ini_term_time: "Horário de Início"
         fin_term_time: "Horário de Término"
       scheme:
-        name: "Nome"
-        form: "Forma"
+        name: "Nome ou Título"
+        form: "Forma do Esquema"
         cq: "Questões Críticas"
       document:
         title: "Título"

@@ -1,20 +1,14 @@
-<!-- teste
-if I18n.locale == "pt-BR"
-﻿<% provide(:title, 'Assistente de Argumento || Argumentação') %>
-else
-﻿<% provide(:title, 'Argument Assistant') %>
-end -->
-﻿<% provide(:title, 'Assistente de Argumento || Argumentação') %>
+﻿<% provide(:title, t(:home)) %>
 <% if signed_in? %>
 <div class="row">
   <aside class="offset1 span10 offset1">
     <div>
       <% if @f.present? && current_user.show_fact? %>
       <a class="close" data-dismiss="alert" href="#">&times;</a>
-      <h1>Desafio de Argumentação [<%= link_to "#C#{@f.id}", @f %>]</h1>
+      <h1><%= t(:challenge)%> [<%= link_to "#C#{@f.id}", @f %>]</h1>
       <%= render 'facts/fact' %>
       <div class="pull-right">
-        <%= link_to 'Participar', @f, :class => "btn btn-primary btn-large" %>        
+        <%= link_to t(:join), @f, :class => "btn btn-primary btn-large" %>        
       </div>
       <% end %>
     </div>
@@ -31,18 +25,18 @@ end -->
     </section>
     <hr/>
     <div align="center">
-      <%= link_to 'Mensagens', msgs_path, class: "btn btn-large" %>
-      <%= link_to 'Melhores Argumentos', top_url, class: "btn btn-large btn-info" %>
+      <%= link_to t(:msgs), msgs_path, class: "btn btn-large" %>
+      <%= link_to t(:best), top_url, class: "btn btn-large btn-info" %>
       <hr/>
-      <%= link_to 'Documentos', documents_path, class: "btn btn-large btn-success" %>
+      <%= link_to t(:docs), documents_path, class: "btn btn-large btn-success" %>
       <hr/>
       <% if current_user.admin? %>
-      <%= link_to 'Backup', backup_url, class: "btn btn-large btn-danger", confirm: "Tem certeza?" %>
+      <%= link_to 'Backup', backup_url, class: "btn btn-large btn-danger", confirm: t(:confirm) %>
       <% end %>
     </div>
   </aside>
   <div class="span6">
-    <h3>Histórico de Argumentos</h3>
+    <h3> <%= t(:timeline)%> </h3>
     <%= render 'shared/feed' %>
   </div>
 </div>
@@ -86,7 +80,7 @@ end -->
 
   </div>
   <div class="span6" align="center" >
-    <%= link_to "Cadastre-se", signup_path, class: "btn btn-large btn-primary" %>
+    <%= link_to t(:signup), signup_path, class: "btn btn-large btn-primary" %>
   </div>
   <div class="span6">
     <blockquote class="pull-right">
