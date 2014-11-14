@@ -84,12 +84,12 @@ es-419:
       argument: 
         content: "Contenido"
       sandarg: 
-        claim: "Propósito"
-        ground: "Prémisse"
-        warrant: "Garantía"
-        backing: "Refuerzo"
-        qualifier: "Calificador"
-        rebuttal: "Refutación"
+        claim: "Aserción"
+        ground: "Evidencia"
+        warrant: "Garantia"
+        backing: "Respaldo"
+        qualifier: "Calificativo modal"
+        rebuttal: "Reserva"
         content: "Contenido"               
       fact: 
         content: "Contenido"
