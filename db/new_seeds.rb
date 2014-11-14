@@ -82,7 +82,7 @@ Fact.create!(:content =>  %{<div align="justify"><div align="justify"><font size
             },
   :problem => %{<div align="justify"><font size="2">Given the impasse set, Your Excellency, on account of their remarkable knowledge, was invited to compose the special competent body and they will issue a reasoned decision criterion, therefore, is one that will decide the life or death of the defendants vote.<br><br>Develop and present the <b> main argument </ b> who understands appropriate for the case presented.</font></div>},
   :active => true,
-  :lang => "EN",
+  :lang => "en",
   :user_id => 1
 )
 
@@ -114,6 +114,22 @@ Scheme.create!(:name => "Autoridade/Especialista",
 \r\nk) A Declaração* está coerente com as evidências conhecidas em Especialidade*?}
 )
 
+Scheme.create!(:name => "Expert Opinion (English)",
+:form => %{<p><b>PREMISES</b></p><blockquote><p>E is an expert in domain D</p><p>E asserts that A is known to be true</p><p>A is within D</p></blockquote><p><b>CONCLUSION</b>&nbsp;</p><blockquote><p>A may (plausibly) be taken to be true.</p></blockquote> 
+},
+:cq =>  %{a) Is E a genuine expert in D?
+\r\nb) Did E really assert that A is known to be true?
+\r\nc) Is the expert's pronouncement directly quoted? If not, is a reference to the original source given? Can it be checked?
+\r\nd) If the expert advice is not quoted, does it look like important information or qualifications may have been left out?
+\r\ne) If more than one expert source has been cited, is each authority quoted separately? Could there be disagreements among the cited authorities?
+\r\nf) Is what the authority said clear? Are there technical terms used that are not explained clearly? If the advice is in layman's terms, could this be an indication that it has been translated from some other form of expression given by the expert?
+\r\ng) Is A relevant to domain D?
+\r\nh) Is A consistent with what other experts in D say?
+\r\ni) Is A consistent with known evidence in D?
+},
+:lang => "en"
+)
+
 Scheme.create!(:name => "Testemunha",
 :form => %{<b>PREMISSA</b>
 Testemunha* diz Declaração*
@@ -142,7 +158,7 @@ Scheme.create!(:name => "Analogy (English)",
           <p>c) Are there differences between C1 and C2 that would tend to undermine the force of the similarity cited?</p>
           <p>d) Is there some other case C3 that is also similar to C1, but in which A is false (true)?</p>
           },
-:lang => "EN"
+:lang => "en"
 )
 
 Scheme.create!(:name => "Causa e Efeito",
@@ -152,56 +168,56 @@ Scheme.create!(:name => "Causa e Efeito",
 }
 )
 
-Scheme.create!(:name => "Condição de saber",
+Scheme.create!(:name => "Condicao de saber",
 :form => %{ <b>PREMISSAS</b><br>Fulano* está na condição de saber se Declaração* é verdadeira/falsa;<br>Fulano* afirma que Declaração* é verdadeira/falsa;<br><br><b>CONCLUSÃO</b> <br>Declaração* é verdadeira/falsa<br> 
 },
 :cq =>  %{<p>a) Fulano* tem realmente condições de saber se Declarão é verdadeira/falsa?</p><p>b) Fulano* é uma fonte honesta, fidedigna, confiável?</p><p>c) Fulano* realmente afirmou que Declaração* é verdadeira/falsa?</p>
 }
 )
 
-Scheme.create!(:name => "Condução de probabilidade",
+Scheme.create!(:name => "Conducao de probabilidade",
 :form => %{<p><b><span class="caps"><span class="caps">PREMISSAS</span></span>&nbsp;</b></p><div>"DADO_A" torna “DADO_B” possível<br>“DADO_A”<br><br></div><div><b>CONCLUSÃO&nbsp;</b></div>“DADO_B”  
 },
 :cq =>  %{Não há questões críticas…
 }
 )
 
-Scheme.create!(:name => "Consequências",
+Scheme.create!(:name => "Consequencias",
 :form => %{<b>PREMISSA</b><br><span id="result_box" class="" lang="pt"><span class="hps">Se A*</span> for<span class="hps"> provocada</span><span>,</span> <span class="hps">em seguida,&nbsp;</span><span class="hps">consequências boas/más serão</span> <span class="hps atn">(ou </span><span>poderão</span><span class="hps"></span><span class=""> ser) geradas.</span></span><br><br><b>CONCLUSÃO</b><br>A* deve (ou não deve) ser provocada.<br> 
 },
 :cq =>  %{<p>a) Quão forte é a probabilidade de que as citadas conseqüências ocorram?&nbsp;</p><p>b) Se A* é provocada, certas consequências acontecerão (ou podem acontecer). Que evidências/fatos suportam essa afirmação?&nbsp;</p><p>c) Existem consequências de valor oposto (negativas ou positivas) que devem ser levadas em consideração?</p>
 }
 )
 
-Scheme.create!(:name => "Constituição de Fatos Concretos",
+Scheme.create!(:name => "Constituicao de Fatos Concretos",
 :form => %{<p><b>PREMISSAS</b><br>Se há o “DADO_A”, então está consubstanciado “DADO_B”<br>“DADO_A"</p><div><b>CONCLUSÃO&nbsp;</b></div><p>Está consubstanciado “DADO_B”</p>  
 },
 :cq =>  %{Não há questões críticas…
 }
 )
 
-Scheme.create!(:name => "Constituição de impossibilidades ",
+Scheme.create!(:name => "Constituicao de impossibilidades ",
 :form => %{<p><b><span class="caps"><span class="caps">PREMISSAS</span></span></b></p> <p>Não é possível "B" quando o DADO_A* está configurado</p><p>DADO_A está configurado<br></p> <p><b>CONCLUSÃO</b></p>Não é possível "B"<br>   
 },
 :cq =>  %{Não há questões críticas…
 }
 )
 
-Scheme.create!(:name => "Constituição de Propriedades ",
+Scheme.create!(:name => "Constituicao de Propriedades ",
 :form => %{<p><b><span class="caps">PREMISSAS</span></b><br>Se há o “DADO_A”, este constitui o fato de que “DADO_B” é "F"<br>“DADO_A"</p><div><b>CONCLUSÃO&nbsp;</b></div><p>“DADO_B” é "F"<br></p>    
 },
 :cq =>  %{Não há questões críticas…
 }
 )
 
-Scheme.create!(:name => "Desperdício",
+Scheme.create!(:name => "Desperdicio",
 :form => %{<p><b>PREMISSAS</b></p> <p>Se FULANO* parar de tentar realizar "A", todos os esforços anteriores de FULANO* para realizar "A" serão perdidos.</p><p>Seria um péssimo negócio se todos os esforços para realizar "A" fossem desperdiçados.<br></p><p><b>CONCLUSÃO</b></p> <p>FULANO* deve continuar tentando realizar "A"</p>     
 },
 :cq =>  %{<p>a) As tentativas de FULANO* para realizar "A" realmente possuem um valor negativo a ser considerado em qualquer decisão prática ou no que pode ser feito agora, ou elas são simples eventos passados que não podem ser alterados?</p><p>b) Há razões suficientes para crer que se FULANO* continuar "A" será realizado? Em outras palavras, "A" é possível?</p><p>c) Há boas razões para crer que o benefício decorrente da realização de "A" é maior que o custo para continuar tentando realizar "A"?</p>
 }
 )
 
-Scheme.create!(:name => "Espécie ao Gênero",
+Scheme.create!(:name => "Especie ao Genero",
 :form => %{<p><b><span class="caps"><span class="caps"><span class="caps">PREMISSAS</span></span></span>&nbsp;</b></p><div>“G”s são espécies de "F"<br>“A” é um "G"<br><br></div><div><b>CONCLUSÃO&nbsp;</b></div><p>“A” é um "F"<br></p>     
 },
 :cq =>  %{Não há questões críticas…
@@ -215,35 +231,35 @@ Scheme.create!(:name => "Igualdade de significado",
 }
 )
 
-Scheme.create!(:name => "Implicação",
+Scheme.create!(:name => "Implicaçao",
 :form => %{ <p><b><span class="caps"><span class="caps"><span class="caps"><span class="caps">PREMISSAS</span></span></span></span>&nbsp;</b></p>“A” implica logicamente "B"<br>“A”<br><br><div><b>CONCLUSÃO&nbsp;</b></div>"B"<br>     
 },
 :cq =>  %{Não há questões críticas…
 }
 )
 
-Scheme.create!(:name => "Indícios/Vestígios",
+Scheme.create!(:name => "Indicios/Vestigios",
 :form => %{<p><b><span class="caps">PREMISSAS</span></b></p> <p>DADO_A* é verdadeiro nesta situação</p><p>EVENTO_B* é geralmente indicado como verdadeiro quando seus indícios (DADO_A*) são verdadeiros neste tipo de situação<br></p> <p><b>CONCLUSÃO</b></p> <p>EVENTO_B* é verdadeiro nesta situação<br></p>      
 },
 :cq =>  %{<p>a) Quão forte é a correspondência entre DADO_A* e EVENTO_B*?</p> <p>b) Há outros eventos mais confiaveis em função do DADO_A?</p>
 }
 )
 
-Scheme.create!(:name => "Indução",
+Scheme.create!(:name => "Inducao",
 :form => %{<b><span class="caps">PREMISSA</span></b><br>A maioria dos "F"s observados são "G"s<br><br><b>CONCLUSÃO</b><br>"F"s geralmente são "G"s<br>      
 },
 :cq =>  %{Não há questões críticas…
 }
 )
 
-Scheme.create!(:name => "Memória",
+Scheme.create!(:name => "Memoria",
 :form => %{<p><b><span class="caps"><span class="caps">PREMISSAS</span></span></b></p> <p>Recorda-se “M”</p> <p><b>CONCLUSÃO</b></p> <p>“M”</p>      
 },
 :cq =>  %{<p>a) O agente que recorda de "M" expressa dúvidas sobre o que lembra?</p><p>b) "M" não é confiável por algum motivo?<br></p><p>c) "M" é baseado em alguma convicção falsa?<br></p>
 }
 )
 
-Scheme.create!(:name => "Opinião popular",
+Scheme.create!(:name => "Opiniao popular",
 :form => %{<b>PREMISSA</b><br>Se a grande maioria (todos, quase todos, tantos %) aceita X* como verdadeiro, então existe uma presunção em favor de X*<br>A grande maioria aceita X* como verdadeiro<br><br><b>CONCLUSÃO</b><br>Existe uma presunção em favor de X* 
 },
 :cq =>  %{Não há questões críticas...<br>
@@ -257,14 +273,14 @@ Scheme.create!(:name => "Parte ao todo",
 }
 )
 
-Scheme.create!(:name => "Percepção",
+Scheme.create!(:name => "Percepcao",
 :form => %{ <p><b><span class="caps">PREMISSAS</span></b></p> <p>Foi percebido "P"</p> <p><b>CONCLUSÃO</b></p> <p>"P"</p>  
 },
 :cq =>  %{<p>a) As circunstâncias em que "P" foi percebido apresentam indicadores de credibilidade?</p>
 }
 )
 
-Scheme.create!(:name => "Silogismo Estatístico",
+Scheme.create!(:name => "Silogismo Estatistico",
 :form => %{<p><b><span class="caps">PREMISSAS</span></b></p> <p>"F"s geralmente (em 90% das vezes) são "G"s</p><p>"C" é um "F"</p> <p><b>CONCLUSÃO</b></p> <p>"C" é um "G"<br></p>  
 },
 :cq =>  %{a) É o caso de "C" ser também "H", sendo que coisas que são "H" não são geralmente "G"?<br>
@@ -273,8 +289,20 @@ Scheme.create!(:name => "Silogismo Estatístico",
 
 #PAGINAS
 Page.create!(:key => "frase",
-:value => %{<p style="margin-bottom: 0px; font-size: 16px; line-height: 22.5px; text-align: right; ">Vem aí o <b>Desafio de Argumentação do UNI-RN!</b></p><p style="margin-bottom: 0px; font-size: 16px; line-height: 22.5px; text-align: right; "><b><br></b></p> <p style="margin-bottom: 0px; font-size: 16px; line-height: 22.5px; text-align: right; ">Não tema aqueles que argumentam, mas aqueles que se esquivam.</p><small style="font-size: 13px; display: block; color: rgb(153, 153, 153); text-align: right; ">Dale Carnegie</small>
+:value => %{<p style="margin-bottom: 0px; font-size: 16px; line-height: 22.5px; text-align: right; ">Não tema aqueles que argumentam, mas aqueles que se esquivam.</p><small style="font-size: 13px; display: block; color: rgb(153, 153, 153); text-align: right; ">Dale Carnegie</small>
 }
+)
+
+Page.create!(:key => "frase",
+:value => %{<p style="margin-bottom: 0px; font-size: 16px; line-height: 22.5px; text-align: right; ">For good ideas and true innovation, you need human interaction, conflict, argument, debate.</p><small style="font-size: 13px; display: block; color: rgb(153, 153, 153); text-align: right; ">Margaret Heffernan</small>
+},
+:lang => "en"
+)
+
+Page.create!(:key => "frase",
+:value => %{<p style="margin-bottom: 0px; font-size: 16px; line-height: 22.5px; text-align: right; ">Primero tienes que aprender las reglas del juego, y después jugar mejor que nadie.</p><small style="font-size: 13px; display: block; color: rgb(153, 153, 153); text-align: right; ">Albert Einstein</small>
+},
+:lang => "es-419"
 )
 
 Page.create!(:key => "estrutura_t",
