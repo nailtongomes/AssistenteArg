@@ -1,7 +1,7 @@
 <% provide(:title, 'Guia de Argumentação - Toulmin') %>
 <div class="row">
   <div class="span12">
-    <h1>Guia de Argumentação</h1>
+    <h1><%= t(:guide_arg) %></h1>
     <blockquote class="pull-right">
       <p>
         "Argumentos são interações humanas pelas quais se formulam, se debatem e/ou se confrontam linhas de raciocínio."
@@ -12,27 +12,27 @@
   <div class="tabbable tabs-below">
     <ul class="nav nav-tabs">
       <li class="active">
-        <a href="#lA" data-toggle="tab">Introdução</a>
+        <a href="#lA" data-toggle="tab"><%= t(:intro) %></a>
       </li>
       <li>
-        <a href="#lB" data-toggle="tab">Rascunhos</a>
+        <a href="#lB" data-toggle="tab"><%= t(:draft) %></a>
       </li>
       <li>
-        <a href="#lC" data-toggle="tab">Constução de Argumento</a>
+        <a href="#lC" data-toggle="tab"><%= t(:constructor) %></a>
       </li>
       <li>
-        <a href="#lD" data-toggle="tab">Leituras e Referências</a>
+        <a href="#lD" data-toggle="tab"><%= t(:references) %></a>
       </li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane active" id="lA">
         <div class="span8">
-          <h3 style="text-align: center">Introdução</h3>
+          <h3 style="text-align: center"><%= t(:intro) %></h3>
           <hr/>
-          <%= textilize Page.find_by_key('IntroGuia').value if Page.find_by_key('IntroGuia').value.present? %>
+          <%= textilize Page.find_by_key(t(:intro_guide)).value if Page.find_by_key(t(:intro_guide)).value.present? %>
         </div>
         <div class="span4">
-          <h3 style="text-align: center">Sobre [ Argumentos ]</h3>
+          <h3 style="text-align: center"><%= t(:about) %> (<%= t(:argument) %>)</h3>
           <hr/>
           <p>
             <a class="btn btn-info" data-toggle="modal" href="#conceito" >1. O que é?</a>

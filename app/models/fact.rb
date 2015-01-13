@@ -12,12 +12,13 @@
 #
 
 class Fact < ActiveRecord::Base
-  attr_accessible :content, :problem, :user_id, :active, :orientation, :ini_term, :fin_term, :ini_term_date, :ini_term_time, :fin_term_date, :fin_term_time 
+  attr_accessible :lang, :content, :problem, :user_id, :active, :orientation, :ini_term, :fin_term, :ini_term_date, :ini_term_time, :fin_term_date, :fin_term_time 
 
   attr_accessor :ini_term_date, :ini_term_time, :fin_term_date, :fin_term_time     
 
   validates :content, presence: true
   validates :problem, presence: true
+  validates :lang, presence: true
 #  validates_format_of :ini_term_time, :with => /\d{1,2}:\d{2}/
 #  validates_format_of :fin_term_time, :with => /\d{1,2}:\d{2}/
 #  validates :ini_term_date, :presence => { :message => "deve ser uma data valida" }

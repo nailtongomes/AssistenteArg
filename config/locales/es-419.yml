@@ -44,6 +44,12 @@ es-419:
   schemes_arg: "Esquemas de los argumentos"
   cq: "Cuestiones críticas"
   no_schemes: "No se encontraron esquemas de argumentos..."
+  #traduzir...
+  guide_arg: "Guia de Argumentação"
+  intro: "Introdução"
+  constructor: "Construtor de Argumentos"
+  references: "Referências"
+  phrase: "cita"
     
   empty: "No se encontraron resultados."
   confirm: Estás seguro?

@@ -84,7 +84,8 @@
   </div>
   <div class="span6">
     <blockquote class="pull-right">
-      <%= textilize Page.find_by_key('frase').value if Page.find_by_key('frase').value.present? %>
+      <%= textilize Page.find_by_key(t(:phrase)).value if (Page.find_by_key(t(:phrase)).value.present?) %>
+
     </blockquote>
   </div>
 

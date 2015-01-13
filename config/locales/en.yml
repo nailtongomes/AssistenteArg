@@ -2,6 +2,7 @@ en:
   translation: 
     pt-BR: "Português (BR)"
     en: "English (EN)"
+    es-419: "Español (ES)"
     
   home: 'Argument Assistant'
   challenge: "Contest of Arguments"
@@ -12,7 +13,7 @@ en:
   timeline: "Timeline"
   signup: "Sign Up"
   signin: "Sign In"
-  signin: "Sign Out"
+  signout: "Sign Out"
   following: "Following"
   followers: "Followers"
   error_timeline: "Sorry, an error prevents the rescue of arguments ..."
@@ -26,13 +27,17 @@ en:
   guide: "Guide"
   search: "Search"
   profile: "Perfil"
-  draft: "Draft"
+  draft: "Drafts"
   config: "Settings"  
   help: "Help"  
   schemes_arg: "Schemes of Arguments"
   cq: "Critical Questions"
   no_schemes: "No argument schemes were found..."  
-  
+  guide_arg: "Argumentation Guide"
+  intro: "Introduction"
+  constructor: "Constructor"
+  phrase: "phrase"
+    
   confirm: "Are you sure?"
   delete: "Delete"
   created_at: "Included at"

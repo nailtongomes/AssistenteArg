@@ -1,10 +1,11 @@
 class Scheme < ActiveRecord::Base
-  attr_accessible :cq, :form, :name
+  attr_accessible :cq, :form, :name, :lang
 
   validates :name, presence: true
   validates :form, presence: true
-
-  default_scope order: 'schemes.name ASC'
+  validates :lang, presence: true
+  
+  default_scope order: 'schemes.lang ASC, schemes.name ASC'
   
   def self.search(search)
     if search

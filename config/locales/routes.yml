@@ -8,14 +8,19 @@ pt-BR:
     contact: contato
     signin: entrar
     signup: registro
+    signout: sair
+    sessions: ingresso
     recover: recuperar
     help: ajuda
     users: usuarios
     arguments: argumentos
     schemes: esquemas
     msgs: mensagens
+    documents: documentos
     facts: fatos
     sandargs: rascunhos
+#      edit: editar
+#      improve: aprimorar
     top: melhores
     new: novo
     edit: editar
