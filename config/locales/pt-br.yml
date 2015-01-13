@@ -43,6 +43,50 @@
   references: "Referências"
   phrase: "frase"
   intro_guide: "IntroGuia"
+  phrase_guide: "Argumentos são interações humanas pelas quais se formulam, se debatem e/ou se confrontam linhas de raciocínio."
+  title_guide: "Guia de Argumentação"
+  what_is: "1. O que é?"
+  w_struture: "2. Qual é a sua estrutura?"
+  w_quality:"3. O que o torna bom?"
+  sand_empty: "O texto do seu rascunho ainda não foi construído."
+  sand_emptys: "Você ainda não possui rascunhos..."
+  
+  explain: "Explicar"
+  ttl_claim: "Pretensão/Conclusão"
+  dsc_claim: "Cada argumento deve deve propor, reivindicar ou concluir alguma coisa [C]"
+  qst_claim: "O que você está tentando provar?"
+  ttl_data: "Razões/Dados"
+  dsc_data: "Cada conclusão deve ser sustentada por fatos [G]"
+  qst_data: "Por que você supõe isso?"
+  ttl_rule: "Garantia/Regra de Inferência"
+  dsc_rule: "Deve existir uma regra, um vínculo, entre a conclusão e os fatos [W]"
+  qst_rule: "Explique seu raciocínio..."
+  ttl_back: "Respaldo"
+  dsc_back: "As regras provém de um fundamento [B]"
+  qst_back: "O quê fundamenta seu raciocínio?"
+  ttl_rbtl: "Reserva/Refutador/Anulador"
+  dsc_rbtl: "Cada argumento pode admitir excessões [R]"
+  qst_rbtl: "Há alguma situação em que seu argumento não se sustenta?"  
+  ttl_qlfc: "Qualificador"
+  dsc_qlfc: "Cada argumento tem sua força verbalizada [Q]"
+  qst_qlfc: "Você acha provável ou é certo?" 
+  auto: "Gerar texto automático?"
+  auto_not: "Sobrescrever texto do argumento?"
+  suggestions: "Sugestões de Leitura"
+  referencias: "referencias"
+  leituras: "leituras"
+  EPre: "EPre"
+  ERaz: "ERaz"
+  EGar: "EGar"
+  ERes: "ERes"
+  ERef: "ERef"
+  EQua: "EQua"
+  concept: "Conceito de argumento"
+  structure: "Estrutura de um argumento"
+  quality: "Qualidade de argumentos"
+  conceito_t: "conceito_t"
+  estrutura_t: "estrutura_t"
+  qualidade_t: "qualidade_t"
   
   intro_png: "intro.png"
   intro1_png: "intro1.png"
@@ -54,18 +98,19 @@
   rating: "Avaliação"
   facts: "Casos"
   improvement: "Aperfeiçoamento"
-    
+
   empty: "Não foram encontrados resultados."
-  confirm: Tem certeza?
-  edit: Editar
-  destroy: Apagar
-  delete: Excluir
-  cancel: Cancelar
+  open: "Abrir"
+  confirm: "Tem certeza?"
+  edit: "Editar"
+  destroy: "Apagar"
+  delete: "Excluir"
+  cancel: "Cancelar"
   new: "Novo"
-  save: "Inserir"
+  save: "Salvar"
   wait: "Aguarde..."
   error_message_header: "%{count} erro(s) impediram este %{model} de ser gravado:"
-  or: ou
+  or: "ou"
 
   ajaxful_rating:
     helper:
@@ -299,8 +344,8 @@
         one: Argumento
         other: Argumentos
       sandarg:
-        one: Rascunho de Argumento
-        other: Rascunhos de Argumentos        
+        one: Rascunho
+        other: Rascunhos
       fact:
         one: Caso
         other: Casos   
