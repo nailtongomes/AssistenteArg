@@ -36,7 +36,20 @@ en:
   guide_arg: "Argumentation Guide"
   intro: "Introduction"
   constructor: "Constructor"
+  references: "References"
   phrase: "phrase"
+  intro_guide: "IntroGuide"
+  
+  intro_png: "introen.png"
+  intro1_png: "intro11.png"
+  intro2_png: "intro12.png"
+  intro3_png: "intro13.png"
+  intro4_png: "intro14.png"
+  intro5_png: "intro15.png"
+  
+  rating: "Rating"
+  facts: "Facts"
+  improvement: "Improvement"
     
   confirm: "Are you sure?"
   delete: "Delete"
