@@ -1,10 +1,10 @@
-<% provide(:title, 'Guia de Argumentação - Toulmin') %>
+<% provide(:title, t(:title_guide)) %>
 <div class="row">
   <div class="span12">
     <h1><%= t(:guide_arg) %></h1>
     <blockquote class="pull-right">
       <p>
-        "Argumentos são interações humanas pelas quais se formulam, se debatem e/ou se confrontam linhas de raciocínio."
+        <%= t(:phrase_guide) %>
       </p>
       <small>Stephen Toulmin</small>
     </blockquote>
@@ -35,33 +35,33 @@
           <h3 style="text-align: center"><%= t(:about) %> (<%= t(:argument) %>)</h3>
           <hr/>
           <p>
-            <a class="btn btn-info" data-toggle="modal" href="#conceito" >1. O que é?</a>
+            <a class="btn btn-info" data-toggle="modal" href="#concept" ><%= t(:w_is) %></a>
           </p>
           <p>
-            <a class="btn btn-info"  data-toggle="modal" href="#estrutura" >2. Qual sua estrutura?</a>
+            <a class="btn btn-info"  data-toggle="modal" href="#structure" ><%= t(:w_struture) %></a>
           </p>
           <p>
-            <a class="btn btn-info"  data-toggle="modal" href="#qualidade" >3. O que o torna bom?</a>
+            <a class="btn btn-info"  data-toggle="modal" href="#quality" ><%= t(:w_quality) %></a>
           </p>
         </div>
       </div>
 
       <div class="tab-pane" id="lB">
         <div class="offset1 span10 offset1">
-          <h3 style="text-align: center">Meus Rascunhos</h3>
+          <h3 style="text-align: center"> <%= t(:draft) %></h3>
           <hr/>
           <% if @sandargs.any? %>
           <% @sandargs.each do |sandarg| %>
           <div class="well">
-            <h3>Rascunho [ <%= sandarg.id %> ]
-            <%= link_to "Aprimorar", improve_sandarg_path(sandarg), class: "btn btn-small btn-info" %>
-            <%= link_to "Ver", sandarg, class: "btn btn-small" %>
-            <%= link_to "Excluir", sandarg, method: :delete, confirm: "Tem certeza?", class: "btn btn-small btn-danger" %> </h3>
+            <h3> <%= t('activerecord.models.sandarg.one') %> [ <%= sandarg.id %> ]
+            <%= link_to t(:improvement), improve_sandarg_path(sandarg), class: "btn btn-small btn-info" %>
+            <%= link_to t(:open), sandarg, class: "btn btn-small" %>
+            <%= link_to t(:delete), sandarg, method: :delete, confirm: t(:confirm), class: "btn btn-small btn-danger" %> </h3>
             <p>
               <% if sandarg.content.present? %>
               <%= sandarg.content %>
               <% else %>
-              O texto do seu rascunho ainda não foi construído.
+                <%= t(:sand_empty) %>
               <% end %>
             </p>
           </div>
@@ -71,7 +71,7 @@
           <br/>
           <br/>
           <p>
-            Você <b>ainda não</b> possui rascunhos...
+            <%= t(:sand_emptys) %>
           </p>
           <br/>
           <br/>
@@ -80,7 +80,7 @@
       </div>
 
       <div class="tab-pane" id="lC">
-        <h3 style="text-align: center">Rascunho de Argumento</h3>
+        <h3 style="text-align: center"> <%= t('activerecord.models.sandarg.one') %></h3>
         <hr/>
         <%= form_for(@sandarg) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
@@ -105,10 +105,10 @@
               <div class="span8 offset2">
                 <a class="pull-right">1/6</a>
                 <p>
-                  Cada argumento deve deve propor, reivindicar ou concluir alguma coisa [C]:
+                   <%= t(:dsc_claim) %>:
                 </p>
-                <%= f.text_area :claim,   :placeholder => "Ou seja, o que você está tentando provar?", :rows => "5"%>
-                <h2>1. Pretensão/Conclusão <a class="btn btn-warning pull-right" data-toggle="modal" href="#EPre" >Explicar</a></h2>
+                <%= f.text_area :claim,   :placeholder => t(:qst_claim), :rows => "5" %>
+                <h2>1. <%= t(:ttl_claim) %> <a class="btn btn-warning pull-right" data-toggle="modal" href="#EPre" ><%= t(:explain) %></a></h2>
                 <hr/>
               </div>
             </div>
@@ -116,10 +116,10 @@
               <div class="span8 offset2">
                 <a class="pull-right">2/6</a>
                 <p>
-                  Cada conclusão deve ser sustentada por fatos [G]:
+                  <%= t(:dsc_data) %>:
                 </p>
-                <%= f.text_area :ground,   :placeholder => "Por que você supõe isso?", :rows => "5"%>
-                <h2>2. Razões/Dados <a class="btn btn-warning pull-right" data-toggle="modal" href="#ERaz" >Explicar</a></h2>
+                <%= f.text_area :ground,   :placeholder => t(:qst_data), :rows => "5"%>
+                <h2>2. <%= t(:ttl_data) %> <a class="btn btn-warning pull-right" data-toggle="modal" href="#ERaz" ><%= t(:explain) %></a></h2>
                 <hr/>
               </div>
             </div>
@@ -127,10 +127,10 @@
               <div class="span8 offset2">
                 <a class="pull-right">3/6</a>
                 <p>
-                  Deve existir uma regra, um vínculo, entre a conclusão e os fatos [W]:
+                  <%= t(:dsc_rule) %>:
                 </p>
-                <%= f.text_area :warrant,   :placeholder => "Explique seu raciocínio...", :rows => "5"%>
-                <h2>3. Garantia/Regra de Inferência <a class="btn btn-warning pull-right" data-toggle="modal" href="#EGar" >Explicar</a></h2>
+                <%= f.text_area :warrant,   :placeholder => t(:qst_rule), :rows => "5"%>
+                <h2>3. <%= t(:ttl_rule) %> <a class="btn btn-warning pull-right" data-toggle="modal" href="#EGar" ><%= t(:explain) %></a></h2>
                 <hr/>
 
               </div>
@@ -139,10 +139,10 @@
               <div class="span8 offset2">
                 <a class="pull-right">4/6</a>
                 <p>
-                  As regras provém de um fundamento [B]:
+                  <%= t(:dsc_back) %>:
                 </p>
-                <%= f.text_area :backing,   :placeholder => "O quê fundamenta seu raciocínio?", :rows => "5"%>
-                <h2>4. Respaldo <a class="btn btn-warning pull-right" data-toggle="modal" href="#ERes" >Explicar</a></h2>
+                <%= f.text_area :backing,   :placeholder => t(:qst_back), :rows => "5"%>
+                <h2>4. <%= t(:ttl_back) %> <a class="btn btn-warning pull-right" data-toggle="modal" href="#ERes" ><%= t(:explain) %></a></h2>
                 <hr/>
 
               </div>
@@ -151,10 +151,10 @@
               <div class="span8 offset2">
                 <a class="pull-right">5/6</a>
                 <p>
-                  Cada argumento pode admitir excessões [R]:
+                  <%= t(:dsc_rbtl) %>:
                 </p>
-                <%= f.text_area :rebuttal,   :placeholder => "Há alguma situação em que seu argumento não se sustenta?", :rows => "5"%>
-                <h2>5. Reserva/Refutador/Anulador <a class="btn pull-right" data-toggle="modal" href="#ERef" >Explicar</a></h2>
+                <%= f.text_area :rebuttal,   :placeholder => t(:qst_rbtl), :rows => "5"%>
+                <h2>5. <%= t(:ttl_rbtl) %> <a class="btn btn-warning pull-right" data-toggle="modal" href="#ERef" ><%= t(:explain) %></a></h2>
                 <hr/>
               </div>
             </div>
@@ -162,14 +162,14 @@
               <div class="span8 offset2">
                 <a class="pull-right">6/6</a>
                 <p>
-                  Cada argumento tem sua força verbalizada [Q]:
+                  <%= t(:dsc_qlfc) %>:
                 </p>
-                <%= f.text_field :qualifier, :placeholder => "Você acha provável ou é certo?",
+                <%= f.text_field :qualifier, :placeholder => t(:qst_qlfc),
                   :data => {:provide => "typeahead",
                     :items => "4",
-                    :source => '["necessariamente", "provavelmente", "possivelmente","é plausível","é inconteste", "não resta dúvida", "estes fatos, aqui expostos, tornam inafastável que", "demonstra-se de forma irrefutável"]'
+                    :source => '["necessariamente", "provavelmente", "talvez", "necessarily", "very possibly", "maybe", "puede ser", "muy posiblemente", "necesariamente"]'
                   }%>
-                <h2>6. Qualificador <a class="btn btn-warning pull-right" data-toggle="modal" href="#EQua" >Explicar</a></h2>
+                <h2>6. <%= t(:ttl_qlfc) %> <a class="btn btn-warning pull-right" data-toggle="modal" href="#EQua" ><%= t(:explain) %></a></h2>
                 <hr/>
               </div>
             </div>
@@ -180,26 +180,26 @@
         </div>
         <div class="pull-right">
           <% if @sandarg.content.blank? %>
-          Gerar texto automático?
+          <%= t(:auto) %>
           <% else %>
-          Sobrescrever texto do argumento?
+          <%= t(:auto_not) %>
           <% end %>
           <%= f.check_box :overwrite %> |
-          <%= f.submit "Gravar", class: "btn btn-large btn-primary", :disable_with => "Aguarde..." %>
+          <%= f.submit t(:save), class: "btn btn-large btn-primary", :disable_with => t(:wait) %>
         </div>
         <% end %>
       </div>
 
       <div class="tab-pane" id="lD">
         <div class="span8">
-        <h3 style="text-align: center">Referências </h3>
+        <h3 style="text-align: center"><%= t(:references) %> </h3>
         <hr/>
-        <%= textilize Page.find_by_key('referencias').value if Page.find_by_key('referencias').value.present? %>
+        <%= textilize Page.find_by_key(t(:referencias).value if Page.find_by_key(t(:referencias)).value.present? %>
         </div>
         <div class="span4">
-        <h3 style="text-align: center">Sugestões de Leitura: </h3>
+        <h3 style="text-align: center"><%= t(:suggestions) %>: </h3>
         <hr/>
-        <%= textilize Page.find_by_key('leituras').value if Page.find_by_key('leituras').value.present? %>
+        <%= textilize Page.find_by_key(t(:leituras)).value if Page.find_by_key(t(:leituras)).value.present? %>
         </div>                       
       </div>
     </div>
@@ -208,111 +208,111 @@
 
 <div class="modal hide" id="EPre">
   <div class="modal-header">
-    <h3>Conclusão/Pretensão</h3>
+    <h3><%= t(:ttl_claim) %></h3>
   </div>
   <div class="modal-body">
-    <%= textilize Page.find_by_key('EPre').value if Page.find_by_key('EPre').value.present? %>
+    <%= textilize Page.find_by_key(t(:EPre)).value if Page.find_by_key(t(:EPre)).value.present? %>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+    <a href="#" class="btn" data-dismiss="modal"><%= t(:cancel) %></a>
   </div>
 </div>
 
 <div class="modal hide" id="ERaz">
   <div class="modal-header">
-    <h3>Razões/Dados</h3>
+    <h3><%= t(:ttl_data) %></h3>
   </div>
   <div class="modal-body">
-    <%= textilize Page.find_by_key('ERaz').value if Page.find_by_key('ERaz').value.present? %>
+    <%= textilize Page.find_by_key(t(:ERaz)).value if Page.find_by_key(t(:ERaz)).value.present? %>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+    <a href="#" class="btn" data-dismiss="modal"><%= t(:cancel) %></a>
   </div>
 </div>
 
 <div class="modal hide" id="EGar">
   <div class="modal-header">
-    <h3>Garantia/Regra de Inferência</h3>
+    <h3><%= t(:ttl_rule) %></h3>
   </div>
   <div class="modal-body">
-    <%= textilize Page.find_by_key('EGar').value if Page.find_by_key('EGar').value.present? %>
+    <%= textilize Page.find_by_key(t(:EGar)).value if Page.find_by_key(t(:EGar)).value.present? %>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+    <a href="#" class="btn" data-dismiss="modal"><%= t(:cancel) %></a>
   </div>
 </div>
 
 <div class="modal hide" id="ERes">
   <div class="modal-header">
-    <h3>Respaldo</h3>
+    <h3><%= t(:ttl_back) %></h3>
   </div>
   <div class="modal-body">
-    <%= textilize Page.find_by_key('ERes').value if Page.find_by_key('ERes').value.present? %>
+    <%= textilize Page.find_by_key(t(:ERes)).value if Page.find_by_key(t(:ERes)).value.present? %>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+    <a href="#" class="btn" data-dismiss="modal"><%= t(:cancel) %></a>
   </div>
 </div>
 
 <div class="modal hide" id="ERef">
   <div class="modal-header">
-    <h3>Condições de Refutação</h3>
+    <h3><%= t(:ttl_rbtl) %></h3>
   </div>
   <div class="modal-body">
-    <%= textilize Page.find_by_key('ERef').value if Page.find_by_key('ERef').value.present? %>
+    <%= textilize Page.find_by_key(t(:ERef)).value if Page.find_by_key(t(:ERef)).value.present? %>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+    <a href="#" class="btn" data-dismiss="modal"><%= t(:cancel) %></a>
   </div>
 </div>
 
 <div class="modal hide" id="EQua">
   <div class="modal-header">
-    <h3>Qualificador</h3>
+    <h3><%= t(:ttl_qlfc) %></h3>
   </div>
   <div class="modal-body">
-    <%= textilize Page.find_by_key('EQua').value if Page.find_by_key('EQua').value.present? %>
+    <%= textilize Page.find_by_key(t(:EQua)).value if Page.find_by_key(t(:EQua)).value.present? %>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+    <a href="#" class="btn" data-dismiss="modal"><%= t(:cancel) %></a>
   </div>
 </div>
 
-<div class="modal hide" id="conceito">
+<div class="modal hide" id="concept">
   <div class="modal-header">
-    <h3>Conceito de argumento</h3>
+    <h3><%= t(:concept) %></h3>
   </div>
   <div class="modal-body">
-    <%= textilize Page.find_by_key('conceito_t').value if Page.find_by_key('conceito_t').value.present? %>
+    <%= textilize Page.find_by_key(t(:conceito_t)).value if Page.find_by_key(t(:conceito_t)).value.present? %>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+    <a href="#" class="btn" data-dismiss="modal"><%= t(:cancel) %></a>
   </div>
 </div>
 
-<div class="modal hide" id="estrutura">
+<div class="modal hide" id="structure">
   <div class="modal-header">
-    <h3>Estrutura de um argumento</h3>
+    <h3><%= t(:structure) %></h3>
   </div>
   <div class="modal-body">
-    <%= textilize Page.find_by_key('estrutura_t').value if Page.find_by_key('estrutura_t').value.present? %>
+    <%= textilize Page.find_by_key(t(:estrutura_t)).value if Page.find_by_key(t(:estrutura_t)).value.present? %>
     <div align="center">
-      <%= image_tag("Estrutura.png", :size => "250x400", :alt => "Estrutura de um Argumento") %>
+      <%= image_tag("Estrutura.png", :size => "250x400", :alt => t(:structure)) %>
     </div>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+    <a href="#" class="btn" data-dismiss="modal"><%= t(:cancel) %></a>
   </div>
 </div>
 
-<div class="modal hide" id="qualidade">
+<div class="modal hide" id="quality">
   <div class="modal-header">
-    <h3>Qualidade de argumentos</h3>
+    <h3><%= t(:quality) %></h3>
   </div>
   <div class="modal-body">
-    <%= textilize Page.find_by_key('qualidade_t').value if Page.find_by_key('qualidade_t').value.present? %>
+    <%= textilize Page.find_by_key(t(:qualidade_t)).value if Page.find_by_key(t(:qualidade_t)).value.present? %>
   </div>
   <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">fechar</a>
+    <a href="#" class="btn" data-dismiss="modal"><%= t(:cancel) %></a>
   </div>
 </div>
