@@ -36,12 +36,24 @@
   schemes_arg: "Esquemas de Argumentos"
   cq: "Questões Críticas"
   no_schemes: "Não foram encontrados esquemas de argumentos..."
+  
   guide_arg: "Guia de Argumentação"
   intro: "Introdução"
   constructor: "Construtor de Argumentos"
   references: "Referências"
   phrase: "frase"
   intro_guide: "IntroGuia"
+  
+  intro_png: "intro.png"
+  intro1_png: "intro1.png"
+  intro2_png: "intro2.png"
+  intro3_png: "intro3.png"
+  intro4_png: "intro4.png"
+  intro5_png: "intro5.png"
+  
+  rating: "Avaliação"
+  facts: "Casos"
+  improvement: "Aperfeiçoamento"
     
   empty: "Não foram encontrados resultados."
   confirm: Tem certeza?
