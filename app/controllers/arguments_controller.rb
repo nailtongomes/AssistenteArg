@@ -19,7 +19,7 @@ class ArgumentsController < ApplicationController
   def create
     @argument = current_user.arguments.build(params[:argument])
     if @argument.save
-      flash[:success] = "Argumento criado."
+      flash[:success] = t(:created)
       redirect_to root_path
     else
       @feed_items = []
@@ -29,7 +29,7 @@ class ArgumentsController < ApplicationController
 
   def destroy
     @argument.destroy
-    flash[:success] = "Argumento removido."
+    flash[:success] = t(:removed)
     redirect_back_or root_path
   end
 
