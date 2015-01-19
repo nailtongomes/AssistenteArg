@@ -315,14 +315,12 @@ Page.create!(:key => "frase",
 
 Page.create!(:key => "phrase",
 :value => %{<p style="margin-bottom: 0px; font-size: 16px; line-height: 22.5px; text-align: right; ">For good ideas and true innovation, you need human interaction, conflict, argument, debate.</p><small style="font-size: 13px; display: block; color: rgb(153, 153, 153); text-align: right; ">Margaret Heffernan</small>
-},
-:lang => "en"
+}
 )
 
-Page.create!(:key => "frase",
+Page.create!(:key => "cita",
 :value => %{<p style="margin-bottom: 0px; font-size: 16px; line-height: 22.5px; text-align: right; ">Primero tienes que aprender las reglas del juego, y después jugar mejor que nadie.</p><small style="font-size: 13px; display: block; color: rgb(153, 153, 153); text-align: right; ">Albert Einstein</small>
-},
-:lang => "es-419"
+}
 )
 
 Page.create!(:key => "referencias",
@@ -337,6 +335,10 @@ Page.create!(:key => "contato",
 :value => %{Prezados, <br><br>Através do meu perfil no <a target="#blank" href="http://twitter.com/nailtongomes">Twitter</a> esclareço eventuais dúvidas e aceito qualquer sugestão ou crítica.<br>Aliás, estas são sempre bem-vindas.<br><br>Se preferir, mande-me um e-mail: <a href="nailtongomes@ig.com.br">nailtongomes@ig.com.br</a> <br><br>A revisão de erros e bugs graves é feita em fluxo contínuo - última verificação em<i><b> 24 de Abril de 2014.</b></i><br><br>A última atualização no código-fonte ocorreu em <i><b>11 de Setembro de 2012</b></i>. <br>Estou organizando a próxima atualização que ainda não tem data definida para ocorrer.<br> 
 })
 
+Page.create!(:key => "contact",
+:value => %{Prezados, <br><br>Através do meu perfil no <a target="#blank" href="http://twitter.com/nailtongomes">Twitter</a> esclareço eventuais dúvidas e aceito qualquer sugestão ou crítica.<br>Aliás, estas são sempre bem-vindas.<br><br>Se preferir, mande-me um e-mail: <a href="nailtongomes@ig.com.br">nailtongomes@ig.com.br</a> <br><br>A revisão de erros e bugs graves é feita em fluxo contínuo - última verificação em<i><b> 24 de Abril de 2014.</b></i><br><br>A última atualização no código-fonte ocorreu em <i><b>11 de Setembro de 2012</b></i>. <br>Estou organizando a próxima atualização que ainda não tem data definida para ocorrer.<br> 
+})
+
 Page.create!(:key => "leituras",
 :value => %{<a href="http://www.esmarn.tjrn.jus.br/revistas/index.php/revista_direito_e_liberdade/article/view/493/468" title="Bons Argumentos no Direito Penal" target="_blank">Bons Argumentos no Direito Penal</a> - Artigo publicado na Revista Direito e Liberdade da ESMARN (Qualis B3).<br><a href="https://drive.google.com/file/d/0B2ZmHw46UO7DYVRTazQ5amNKSlU/edit?usp=sharing" title="" target="_blank">DIREITO, ARGUMENTAÇÃO E INTELIGÊNCIA ARTIFICIAL</a> - Trabalho de Conclusão de Curso (Monografia)<br><div><br></div><div><a href="https://drive.google.com/file/d/0B2ZmHw46UO7DUkZlRHdXVmlEMFU/edit?usp=sharing" title="" target="_blank">Argument in Artificial Intelligence and Law</a>&nbsp;- Artigo de&nbsp;Trevor BENCH-CAPON (1995)<br></div><div><a href="https://drive.google.com/file/d/0B2ZmHw46UO7DeDR3SmctS0g2RE0/edit?usp=sharing" title="" target="_blank">Good Reasoning on the Toulmin Model</a> - Artigo de David HITCHCOCK (2006)</div><div><a href="https://drive.google.com/file/d/0B2ZmHw46UO7DQ2RGWVk1VjNPZWs/edit?usp=sharing" title="" target="_blank">The uses of argument</a> - Livro Stephen TOULMIN (2003)<br></div><div><a href="https://drive.google.com/file/d/0B2ZmHw46UO7DUVlRdE5mZEZCUWc/edit?usp=sharing" title="" target="_blank">An Introduction to Reasoning</a> - Livro de Stephen TOULMIN, Richard RIEKE e Allan JANIK (2003)</div><div><br></div>
 })
@@ -347,6 +349,18 @@ Page.create!(:key => "leituras_en",
 
 Page.create!(:key => "ajuda_log",
 :value => %{<div><b><p>1. Como mudo minha foto?</p></b><p>O&nbsp;<a href="http://br.gravatar.com/">Gravatar</a>, um Avatar Globalmente Reconhecido, é o responsável por armazenar sua <i><b>foto de perfil</b></i>.</p><b><p>2. Posso enviar um caso?</p></b><p>Sim. Há uma opção de propor <b><i>casos</i></b>&nbsp;<i><a href="http://argumentos.herokuapp.com/facts">aqui</a></i>.</p><p style="margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.1em; line-height: 1.7em; text-align: justify;"><b>3. Posso enviar mais de um argumento para o mesmo caso?</b></p><p><b style="font-size: 13px; line-height: 18px; text-align: start;"></b></p><p>Sim. Não qualquer restrição ao envio de <i><b>argumentos</b></i>.&nbsp;</p><b><p>4. Como faço para acompanhar os argumentos de alguém?</p></b><p>Primeiro, clique em&nbsp;<i><a href="http://argumentos.herokuapp.com/users">usuários</a></i>. Em seguida, procure pelo <b><i>usuário </i></b>que você deseja acompanhar e clique em seu nome. Estando no perfil do usuário desejado, clique em '<i><b>seguir'</b></i>.</p><b><p>5. Posso editar meu argumento?</p></b><p>Não. O <b><i>argumento </i></b>não poderá ser editado. Alternativamente, pode-se excluí-lo e inseri-lo novamente com a correção.</p><p style="margin: 0px 0px 9px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.1em; line-height: 1.7em; text-align: justify;"><b>6. O que significa 'ajuda pra argumentar' ou 'guia'?</b></p><p><b style="font-size: 13px; line-height: 18px; text-align: start;"></b></p><p>Um dos objetivos do ARG concentra-se em auxiliar aqueles que tem dificuldade em estruturar um <b><i>argumento </i></b>e, por isso, necessitam de ajuda. Pensando nisso, almeja-se, através de um <a href="http://argumentos.herokuapp.com/sandargs">guia</a>&nbsp;interativo, ajudar alguém a compor um argumento ao menos razoável com base em uma teoria de argumentação.&nbsp;</p><p>Abaixo, um vídeo de demonstração do <i><b>guia</b></i>:</p><p style="text-align: center;"><iframe width="560" height="315" src="//www.youtube.com/embed/BB0YDiOPam8?rel=0" frameborder="0" allowfullscreen=""></iframe></p><p><b>7. Quais os navegadores suportados?</b></p><p> O ARG suporta os navegadores <b><i>Firefox 4.0+</i></b> e <b><i>Google Chrome</i></b>. Outros navegadores também podem funcionar, mas, para a melhor experiência de uso, recomendamos que você use um dos navegadores listados acima que não apresentaram erros de interação e navegabilidade.</p><p>Alguns navegadores de celulares (<i>smartphone</i>) não apresentam o visual deste site adequadamente.<br></p></div>
+})
+
+Page.create!(:key => "ajuda",
+:value => %{<div class="span11 offset1"> <b> <p> 1. O que é? </p></b> <p> O Arg. é uma ferramenta construída em um ambiente virtual com o objetivo de auxiliar na composição de (bons) argumentos. </p> <b> <p> 2. Para quem é? </p></b> <p> O Arg. é destinado aos acadêmicos do curso de direito. </p> <b> <p> 3. O que o Arg. me permite fazer? </p></b> </div> <div class="span5 offset1"> <p> É possível, através do Arg.: <br/> a) armazenar argumentos sem qualquer complicação; <br/> b) visualizá-los de forma clara e concisa; <br/> c) acompanhar os argumentos de outros usuários; <br/> d) obter auxílio para compor bons argumentos e para aprimorá-los; <br/> </p> </div> <div class="span5 pull-right"> <p> e) aprender uma teoria de argumentação; <br/> f) conhecer os esquemas de argumentos; <br/> g) receber e fornecer avaliações de argumentos; <br/> h) estimular e ser estimulado a argumentar; <br/> i) encontrar bons argumentos... </p> </div> <div class="span11 offset1"> <b> <p> 4. Qual o objetivo do Arg.? </b> </p> <p> Ser uma ferramenta útil, capaz de contribuir e/ou somar na formação intelectual de seus usuários. </p> </div>
+})
+
+Page.create!(:key => "ajuda_log_en",
+:value => %{Writing...
+})
+
+Page.create!(:key => "ajuda_en",
+:value => %{Writing...
 })
 
 Page.create!(:key => "con_razoes",

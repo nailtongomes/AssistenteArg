@@ -1,5 +1,5 @@
-<% provide(:title, "Entrar") %>
-<h1>Entrar</h1>
+<% provide(:title, t(:signin)) %>
+<h1><%= t(:signin) %></h1>
 
 <div class="row">
   <div class="span6 offset3">
@@ -8,13 +8,13 @@
       <%= f.label :email, "E-Mail" %>
       <%= f.text_field :email %>
 
-      <%= f.label :password, "Senha" %>
+      <%= f.label :password, t('activerecord.attributes.user.password') %>
       <%= f.password_field :password %>
 
-      <%= f.submit "Entrar", class: "btn btn-large btn-primary", :disable_with => "Aguarde..." %>
+      <%= f.submit t(:signin), class: "btn btn-large btn-primary", :disable_with => t(:wait) %>
     <% end %>
 	<hr/>
-    <p>Ainda não é cadastrado? <%= link_to "Cadastre-se", signup_path %>!</p>
-    <%= link_to "Esqueceu sua senha?", recover_url %>
+    <p> <%= t(:not_user)%> <%= link_to t(:signup), signup_path %>!</p>
+    <%= link_to t(:recover), recover_url %>
   </div>
 </div>

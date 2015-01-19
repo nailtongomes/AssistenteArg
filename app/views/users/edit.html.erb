@@ -1,4 +1,4 @@
-<% provide(:title, "Atualizando perfil") %> <h1>Atualize seu perfil</h1>
+<% provide(:title, t(:profile)) %> <h1><%= t(:profile) %></h1>
 <hr/>
 <div class="row">
 	<div class="span10">
@@ -17,12 +17,14 @@
 
 			<%= f.label :password_confirmation %>
 			<%= f.password_field :password_confirmation %>
-			Mostrar o caso da semana?  
+			<p><%= t(:lang) %></p>
+            <%= f.select :lang, options_for_select([['Português (PT-BR)', "pt-BR"], ['English (EN)', "en"]], @user.lang) %>
+			<%= t(:show_fact) %>  
 			<%= f.check_box :show_fact %><br/>			
-			Habilitar o editor html?  
+			<%= t(:show_editor) %>
 			<%= f.check_box :show_html %>
 			<hr/>			
-			<%= f.submit "Gravar", class: "btn btn-large btn-primary", :disable_with => "Aguarde..." %>			
+			<%= f.submit t(:update), class: "btn btn-large btn-primary", :disable_with => t(:wait) %>			
 			<% end %>
 		</div>
 		<div class="span3 offset1">
@@ -30,7 +32,7 @@
 		</div>
 		<div class="span3 offset1" align="center">
 			<hr/>
-			<a href="http://gravatar.com/emails" target="_blank" class="btn btn-info">Alterar</a>
+			<a href="http://gravatar.com/emails" target="_blank" class="btn btn-info"><%= t(:update) %></a>
 		</div>
 	</div>
 </div>

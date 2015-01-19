@@ -9,3 +9,6 @@
 
 <%= f.label :password_confirmation %>
 <%= f.password_field :password_confirmation %>
+
+<p><%= t(:lang) %></p>
+<%= f.select :lang, options_for_select([['Português (PT-BR)', "pt-BR"], ['English (EN)', "en"]], "pt-BR") %>

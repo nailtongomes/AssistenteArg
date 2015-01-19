@@ -4,6 +4,7 @@ class CreateSchemes < ActiveRecord::Migration
       t.string :name
       t.text :form
       t.text :cq
+      t.string :lang, :default => "pt-BR"
 
       t.timestamps
     end

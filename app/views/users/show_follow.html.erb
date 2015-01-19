@@ -4,8 +4,8 @@
     <section>
       <%= gravatar_for @user %>
       <h1><%= @user.name %></h1>
-      <span><%= link_to "Meu perfil", @user %></span>
-      <span><b>Argumentos:</b> <%= @user.arguments.count %></span>
+      <span><%= link_to t(:profile), @user %></span>
+      <span><b><%= t('activerecord.models.argument.other') %>:</b> <%= @user.arguments.count %></span>
     </section>
     <section>
       <%= render 'shared/stats' %>
@@ -27,7 +27,7 @@
       <%= will_paginate @users %>
     <% else %>
     	<br/>
-    	<p>Você não segue ou não possui seguidores... </p>
+    	<p><%= t(:empty) %></p>
     <% end %>
   </div>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141114195212) do
+ActiveRecord::Schema.define(:version => 20121003155230) do
 
   create_table "arguments", :force => true do |t|
     t.text     "content"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20141114195212) do
   create_table "facts", :force => true do |t|
     t.text     "content"
     t.text     "problem"
+    t.string   "lang",        :default => "pt-BR"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
     t.boolean  "active",      :default => false
@@ -46,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20141114195212) do
     t.text     "orientation"
     t.datetime "ini_term"
     t.datetime "fin_term"
-    t.string   "lang",        :default => "pt-BR"
   end
 
   create_table "msgs", :force => true do |t|
@@ -64,9 +64,8 @@ ActiveRecord::Schema.define(:version => 20141114195212) do
   create_table "pages", :force => true do |t|
     t.string   "key"
     t.text     "value"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-    t.string   "lang",       :default => "pt-BR"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "pages", ["key"], :name => "index_pages_on_key"
@@ -115,9 +114,9 @@ ActiveRecord::Schema.define(:version => 20141114195212) do
     t.string   "name"
     t.text     "form"
     t.text     "cq"
+    t.string   "lang",       :default => "pt-BR"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
-    t.string   "lang",       :default => "pt-BR"
   end
 
   add_index "schemes", ["name"], :name => "index_schemes_on_name"
@@ -125,13 +124,14 @@ ActiveRecord::Schema.define(:version => 20141114195212) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
     t.boolean  "moderator",       :default => false
     t.boolean  "show_fact",       :default => true
+    t.string   "lang",            :default => "pt-BR"
     t.boolean  "show_html",       :default => false
   end
 

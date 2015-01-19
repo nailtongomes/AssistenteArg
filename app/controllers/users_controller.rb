@@ -26,19 +26,22 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Bem vindo ao Arg!"
-      redirect_to root_path
+      I18n.locale = @user.lang 
+      flash[:success] = t(:welcome)
+      redirect_to root_path(:locale => @user.lang)
     else
       render 'new'
     end
   end
 
   def edit    
+
   end
 
   def update
     if @user.update_attributes(params[:user])
-      flash[:success] = "Perfil atualizado."
+      I18n.locale = @user.lang
+      flash[:success] = t(:updated)
       sign_in @user
       redirect_to @user
     else
@@ -51,19 +54,19 @@ class UsersController < ApplicationController
       UserMailer.save_arguments_notification(User.find(params[:id])).deliver
     end
     User.find(params[:id]).destroy
-    flash[:success] = "Usuario removido."
+    flash[:success] = t(:removed)
     redirect_to users_path
   end
 
   def following
-    @title = "Seguindo"
+    @title = t(:following)
     @user = User.find(params[:id])
     @users = @user.followed_users.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
-    @title = "Seguidores"
+    @title = t(:followers)
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
@@ -74,7 +77,7 @@ class UsersController < ApplicationController
   def signed_in_user
     unless signed_in?
       store_location
-      redirect_to signin_path, notice: "Por favor, autentifique-se."
+      redirect_to signin_path, notice: t(:need_log)
     end
   end
 

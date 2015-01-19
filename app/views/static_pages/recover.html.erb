@@ -1,12 +1,12 @@
-<% provide(:title, 'Senha') %> <h1>Recuperação de Senha</h1>
+<% provide(:title, t('activerecord.attributes.user.password')) %> <h1><%= t(:recover) %></h1>
 <hr/>
 <div class="row">
 	<div class="span6 offset3">
 		<%= form_tag recover_url, :method => 'get' do %>
 		E-Mail:
-		<%= email_field_tag :email, params[:email], :placeholder => "Digite seu E-mail e pressione enter" %>
+		<%= email_field_tag :email, params[:email], :placeholder => t(:type_email) %>
 		<hr/>
-		Após digitar seu e-mail e pressionar [enter] uma nova senha será gerada e enviada para o seu e-mail.						
+		<%= t(:recover_info) %>						
 		<% end %>		
 	</div>
 </div>

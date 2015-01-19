@@ -9,6 +9,6 @@
   <%= link_to user.name, user %>
   <br/><%= user.email if current_user.admin? %>  	 
   <% if current_user.admin? && !current_user?(user) %>
-  <%= link_to "Excluir", user, method: :delete, confirm: "Tem certeza?", :class => "btn btn-danger btn-small pull-right" %>
+  <%= link_to t(:delete), user, method: :delete, confirm: t(:confirm), :class => "btn btn-danger btn-small pull-right" %>
   <% end %>
 </li>

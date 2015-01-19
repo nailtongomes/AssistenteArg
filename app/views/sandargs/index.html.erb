@@ -32,7 +32,7 @@
           <%= textilize Page.find_by_key(t(:intro_guide)).value if Page.find_by_key(t(:intro_guide)).value.present? %>
         </div>
         <div class="span4">
-          <h3 style="text-align: center"><%= t(:about) %> (<%= t(:argument) %>)</h3>
+          <h3 style="text-align: center"><%= t(:about) %> (<%= t('activerecord.models.argument.one') %>)</h3>
           <hr/>
           <p>
             <a class="btn btn-info" data-toggle="modal" href="#concept" ><%= t(:w_is) %></a>
@@ -194,7 +194,7 @@
         <div class="span8">
         <h3 style="text-align: center"><%= t(:references) %> </h3>
         <hr/>
-        <%= textilize Page.find_by_key(t(:referencias).value if Page.find_by_key(t(:referencias)).value.present? %>
+        <%= textilize Page.find_by_key(t(:referencias)).value if Page.find_by_key(t(:referencias)).value.present? %>
         </div>
         <div class="span4">
         <h3 style="text-align: center"><%= t(:suggestions) %>: </h3>

@@ -3,6 +3,7 @@ class CreateFacts < ActiveRecord::Migration
     create_table :facts do |t|
       t.text :content
       t.text :problem
+      t.string :lang, :default => "pt-BR"
 
       t.timestamps
     end

@@ -8,7 +8,7 @@ module UsersHelper
   end
     
   def moderator_link_text(approvable)  
-  approvable.moderator? ? '[ Remover ]' : '[ Conceder ]'  
+  approvable.moderator? ? t(:remove) : t(:grant)  
 end  
 
 end
