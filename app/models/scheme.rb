@@ -8,8 +8,10 @@ class Scheme < ActiveRecord::Base
   default_scope order: 'schemes.lang ASC, schemes.name ASC'
   
   def self.search(search)
+#  def self.search(search, locale)
     if search
       where("LOWER(name) LIKE ?", "%#{search.downcase}%")
+#      where("LOWER(name) LIKE ? AND lang LIKE ?", "%#{search.downcase}%", "%#{locale}")
     else
       scoped
     end
