@@ -117,6 +117,8 @@ en:
   
   moderator_rate: "Assessment of the moderators:"
   user_rate: "Community assessment:"
+  title_argument: "%{user}'s Argument"
+  tweet: "Tweet"
   
   updated: "Updated successfully!"
   removed: "Removed successfully!"  
