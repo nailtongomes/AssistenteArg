@@ -106,6 +106,9 @@
   
   title_argument: "Argumento de %{user}!"
   tweet: "Tweetar"
+  error_unexpected: "Ops! Ocorreu uma falha no sistema. Por favor, tente novamente ou entre em contato."
+  created: "Inserido com sucesso!"
+  private_doc: "Documento particular."
 
   follow: "Seguir"
   empty: "Não foram encontrados resultados."
