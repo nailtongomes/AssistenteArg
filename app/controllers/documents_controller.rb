@@ -8,7 +8,7 @@ class DocumentsController < ApplicationController
   def show
     @document = Document.find(params[:id])
     if current_user.nil? || (!@document.active && @document.user_id != current_user.id) 
-      flash[:error] = "Documento particular/protegido."
+      flash[:error] = t(:private_doc)
       redirect_to documents_path    
     end
   end
@@ -16,10 +16,10 @@ class DocumentsController < ApplicationController
   def create
     @document = current_user.documents.build(params[:document])
     if @document.save
-      flash[:success] = "Documento inserido com sucesso."
+      flash[:success] = t(:created)
       redirect_to documents_path
     else
-      flash[:error] = "Erro ao inserir o documento."
+      flash[:error] = t(:error_unexpected)
       redirect_to documents_path
     end
   end
@@ -34,7 +34,7 @@ class DocumentsController < ApplicationController
 
   def update
     if @document.update_attributes(params[:document])
-      flash[:success] = "Documento atualizado."
+      flash[:success] = t(:updated)
       render 'show'
     else
       render 'edit'
@@ -43,7 +43,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document.destroy
-    flash[:success] = "Documento removido."
+    flash[:success] = t(:removed)
     redirect__to documents_path
   end
 
@@ -52,7 +52,7 @@ class DocumentsController < ApplicationController
   def signed_in_user
     unless signed_in?
       store_location
-      redirect_to signin_path, notice: "Por favor, autentifique-se."
+      redirect_to signin_path, notice: t(:need_log)
     end
   end
 
