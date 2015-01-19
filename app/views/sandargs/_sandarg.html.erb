@@ -2,11 +2,11 @@
     <span class="content"><%= sandarg.content %></span>
     <br/>
     <span class="timestamp">
-      Incluído há <%= time_ago_in_words(sandarg.created_at) %>
+      <%= t(:created_at) %> <%= time_ago_in_words(sandarg.created_at) %>
     </span>
   <% if current_user?(sandarg.user) %>
-    <%= link_to "Excluir", feed_item, method:  :delete,
-                                     confirm: "Tem certeza?",
+    <%= link_to t(:delete), feed_item, method:  :delete,
+                                     confirm: t(:confirm),
                                      class: "btn btn-small btn-danger" %>
   <% end %>
 </li>
