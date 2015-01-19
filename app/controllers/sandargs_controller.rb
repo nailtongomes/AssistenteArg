@@ -20,10 +20,10 @@ class SandargsController < ApplicationController
   def create
     @sandarg = current_user.sandargs.build(params[:sandarg])
     if @sandarg.save
-      flash[:success] = "Rascunho criado."
+      flash[:success] = t(:created)
       render 'show'
     else
-      flash[:error] = "Erro ao criar o rascunho."
+      flash[:error] = t(:error_unexpected)
       @sandargs = []
       render 'index'
     end
@@ -36,7 +36,7 @@ class SandargsController < ApplicationController
   def update
     @sandarg  = current_user.sandargs.find(params[:id])
     if @sandarg.update_attributes(params[:sandarg])
-      flash[:success] = "Rascunho atualizado."
+      flash[:success] = t(:updated)
       render 'show'
     else
       render 'edit'
@@ -45,7 +45,7 @@ class SandargsController < ApplicationController
 
   def destroy
     @sandarg.destroy
-    flash[:success] = "Rascunho removido."
+    flash[:success] = t(:removed)
     redirect_back_or sandargs_path
   end
 
