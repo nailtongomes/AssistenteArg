@@ -1,15 +1,15 @@
 <% if @feed_items.any? %>
 <ol class="arguments">
-	<%= render partial: 'shared/feed_item', collection: @feed_items %>
+<%= render partial: 'shared/feed_item', collection: @feed_items %>
 </ol>
 <%= will_paginate @feed_items %>
 <% else %>
 <hr/>
 <% if @argument.errors.any? %>
 <p>
-	<%= :error_timeline %>
+<%= :error_timeline %>
 </p>
 <% else %>
-<%= textilize Page.find_by_key('novo_usu').value if Page.find_by_key('novo_usu').value.present? %>
+<%= textilize Page.find_by_key(t(:novo_usu)).value if Page.find_by_key(t(:novo_usu)).value.present? %>
 <% end %>
 <% end %>
