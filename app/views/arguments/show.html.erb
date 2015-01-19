@@ -1,17 +1,17 @@
-<% provide(:title, "Argumento de #{User.find_by_id(@argument.user_id).name}") %>
+<% provide(:title, t('title_argument', user: "#{User.find_by_id(@argument.user_id).name}")) %>
 <div class="row">
   <div class="span10 offset1">
     <ul class="unstyled">
       <li>
         <span class="content"><%= @argument.content %></span>
-        <span class="timestamp"> Incluído há <%= time_ago_in_words(@argument.created_at) %>
-          por <%= User.find_by_id(@argument.user_id).name %> </span>
+        <span class="timestamp"> <%= t(:created_at) %> <%= time_ago_in_words(@argument.created_at) %>
+          <%= t(:by) %> <%= User.find_by_id(@argument.user_id).name %> </span>
       </li>
       <% if signed_in? %>
       <div align="center">
         <table border="1" style="margin-top: 10px">
           <thead>
-            <td>Nota:</td>
+            <td><%= t(:user_rate) %></td>
           </thead>
           <tbody>
             <td> <% if current_user.id != @argument.user_id %>
@@ -22,7 +22,8 @@
           </tbody>
         </table>
       </div>
-      <span>Nota (Moderadores):
+  
+      <span><%= t(:moderator_rate) %>
         <div id="rating">
           <% if current_user.moderator? %>
           <%= ratings_for @argument, :dimension => :moderador, :small => true, :show_user_rating => true %>
@@ -34,7 +35,7 @@
       <br/>
       <div class="fb-like" data-send="true" data-width="450" data-show-faces="true" data-font="tahoma"></div>
       <hr/>
-      <a href="https://twitter.com/share" class="twitter-share-button" data-lang="pt" data-size="large" data-hashtags="ARG" data-text="Este argumento é bem interessante! O que vocês acham?" data-dnt="true">Tweetar</a>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-lang="pt" data-size="large" data-hashtags="ARG" data-text="Este argumento é bem interessante! O que vocês acham?" data-dnt="true"><%= t(:tweet) %></a>
     </ul>
   </div>
 </div>
