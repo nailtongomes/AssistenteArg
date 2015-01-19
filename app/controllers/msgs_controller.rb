@@ -25,20 +25,20 @@ class MsgsController < ApplicationController
       flash[:success] = "Mensagem enviada."
       redirect_to msgs_path
     else
-      flash[:error] = "Erro ao enviar a mensagem."
+      flash[:error] = t(:error_unexpected)
       redirect_to msgs_path
     end
   end
 
   def destroy
     @msg.destroy
-    flash[:success] = "Mensagem removida."
+    flash[:success] = t(:removed)
     redirect_back_or msgs_path
   end
   
   def clear
     Msg.delete_all
-    flash[:success] = "Mensagens removidas."
+    flash[:success] = t(:removed)
     redirect_to msgs_path
   end
 
@@ -47,7 +47,7 @@ class MsgsController < ApplicationController
   def signed_in_user
     unless signed_in?
       store_location
-      redirect_to signin_path, notice: "Por favor, autentifique-se."
+      redirect_to signin_path, notice: t(:need_log)
     end
   end
 
