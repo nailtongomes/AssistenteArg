@@ -119,6 +119,9 @@ en:
   user_rate: "Community assessment:"
   title_argument: "%{user}'s Argument"
   tweet: "Tweet"
+  error_unexpected: "Ops! A failure occurred in the system. Please try again or contact us."
+  created: "Successfully inserted!"
+  private_doc: "Private document."  
   
   updated: "Updated successfully!"
   removed: "Removed successfully!"  
