@@ -67,7 +67,7 @@
   ttl_rbtl: "Reserva/Refutador/Anulador"
   dsc_rbtl: "Cada argumento pode admitir exceções [R]"
   qst_rbtl: "Há alguma situação em que seu argumento não se sustenta?"  
-  ttl_qlfc: "Qualificador"
+  ttl_qlfc: "Qualificador/Força da Conclusão"
   dsc_qlfc: "Cada argumento tem sua força verbalizada [Q]"
   qst_qlfc: "Você acha provável ou é certo?" 
   auto: "Gerar texto automático?"
@@ -143,6 +143,9 @@
   contact_page: "contato"
   lang: "Idioma do sistema"
   error_login: "Combinacao de E-Mail/Senha invalida"
+  desc_fact: "Descreva o caso."
+  desc_prob: "Descreva o problema."
+  novo_usu: "novo_usu"
 
   ajaxful_rating:
     helper:
