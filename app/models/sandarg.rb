@@ -30,26 +30,32 @@ class Sandarg < ActiveRecord::Base
     
   private
 
-  def gen_content    
-    if self.overwrite
+  def gen_content
+#   lang = User.find(self.user_id).lang
     b = %([B] #{self.backing})
     w = %([W] #{self.warrant})
     g = %([G] #{self.ground})
     q = %([Q] #{self.qualifier})
     c = %([C] #{self.claim})    
     r = %([R] #{self.rebuttal})
-      if self.backing.blank? && self.warrant.present?
-        self.content = %[Entende-se que #{w}. Dado que #{g}, portanto, #{q}, #{c}]
-      elsif self.backing.present? && self.warrant.blank?
-        self.content = %[Com base no #{b}, dado que #{g}, logo, #{q}, #{c}]
-      elsif self.backing.blank? && self.warrant.blank?        
-        self.content = %[Dado que #{g}, dessarte, #{q}, #{c}]
-      else
-        self.content = %[Com base no #{b}, assume-se que #{w}. Dado que #{g}, portanto, #{q}, #{c}]  
-      end
-      if self.rebuttal.present?
-        self.content << r
-      end      
+#    if self.overwrite && lang == "pt-BR"
+    if self.overwrite
+        if self.backing.blank? && self.warrant.present?
+          self.content = %[Entende-se que #{w}. Dado que #{g}, portanto, #{q}, #{c}]
+        elsif self.backing.present? && self.warrant.blank?
+          self.content = %[Com base no #{b}, dado que #{g}, logo, #{q}, #{c}]
+        elsif self.backing.blank? && self.warrant.blank?        
+          self.content = %[Dado que #{g}, dessarte, #{q}, #{c}]
+        else
+          self.content = %[Com base no #{b}, assume-se que #{w}. Dado que #{g}, portanto, #{q}, #{c}]  
+        end
+        if self.rebuttal.present?
+          self.content << r
+        end      
+#     elsif self.overwrite && lang == "en"
+#
+#
+#     elsif self.overwrite && lang == "es"
     end         
   end  
 end
