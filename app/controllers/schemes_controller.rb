@@ -13,10 +13,10 @@ class SchemesController < ApplicationController
   def update
     @scheme = Scheme.find(params[:id])
     if @scheme.update_attributes(params[:scheme])
-      flash[:success] = "Esquema atualizado."
+      flash[:success] = t(:updated)
       redirect_to schemes_path
     else
-      flash[:error] = "Erro!"
+      flash[:error] = t(:error_unexpected)
       render "edit"
     end
   end
@@ -24,16 +24,17 @@ class SchemesController < ApplicationController
   def index
     #filtrar por locale
     @schemes = Scheme.search(params[:search]).paginate(:per_page => 30, :page => params[:page])
+    @schemes
     @scheme = Scheme.new
   end
 
   def create
     @scheme = Scheme.create(params[:scheme])
     if @scheme.save
-      flash[:success] = "Esquema criado com sucesso."
+      flash[:success] = t(:created)
       redirect_to schemes_path
     else
-      flash[:error] = "Erro ao criar o Esquema..."
+      flash[:error] = t(:error_unexpected)
       @schemes = []
       render "index"
     end
@@ -41,7 +42,7 @@ class SchemesController < ApplicationController
 
   def destroy
     Scheme.find(params[:id]).destroy
-    flash[:success] = "Esquema removido..."
+    flash[:success] = t(:removed)
     redirect_to schemes_path
   end
 
