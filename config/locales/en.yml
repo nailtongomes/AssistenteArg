@@ -135,6 +135,9 @@ en:
   contact_page: "contact"
   lang: "Language system"
   error_login: "Incorrect e-mail or invalid password"
+  desc_fact: "Describe the case."
+  desc_prob: "Describe the problem."
+  novo_usu: "novo_usu_en"
       
   date:
     abbr_day_names:
