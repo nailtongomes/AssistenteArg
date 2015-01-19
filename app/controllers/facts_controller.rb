@@ -26,10 +26,10 @@ class FactsController < ApplicationController
   def update
     @fact = Fact.find(params[:id])
     if @fact.update_attributes(params[:fact])
-      flash[:success] = "Caso atualizado."
+      flash[:success] = t(:updated)
       redirect_to facts_path
     else
-      flash[:error] = "Erro!"
+      flash[:error] = t(:error_unexpected)
       @facts = []
       @unactives = []
       render "index"
@@ -39,10 +39,10 @@ class FactsController < ApplicationController
   def create
     @fact = Fact.create(params[:fact])
     if @fact.save
-      flash[:success] = "Caso criado com sucesso e submetido aos administradores."
+      flash[:success] = t(:created)
       redirect_to facts_path
     else
-      flash[:error] = "Erro ao criar o caso..."
+      flash[:error] = t(:error_unexpected)
       @facts = []
       @unactives = []
       render "index"
@@ -51,7 +51,7 @@ class FactsController < ApplicationController
 
   def destroy
     Fact.find(params[:id]).destroy
-    flash[:success] = "Caso removido..."
+    flash[:success] = t(:removed)
     redirect_to facts_path
   end
 
