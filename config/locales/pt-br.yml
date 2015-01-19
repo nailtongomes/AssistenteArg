@@ -103,6 +103,9 @@
   not_user: "Ainda não é cadastrado?"
   admin: "Administrador"
   moderator: "Moderador"
+  
+  title_argument: "Argumento de %{user}!"
+  tweet: "Tweetar"
 
   follow: "Seguir"
   empty: "Não foram encontrados resultados."
