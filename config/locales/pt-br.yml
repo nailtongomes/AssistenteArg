@@ -36,6 +36,8 @@
   schemes_arg: "Esquemas de Argumentos"
   cq: "Questões Críticas"
   no_schemes: "Não foram encontrados esquemas de argumentos..."
+  team: "Equipe"
+  phrase_team: "Este é um ambiente voltado para acadêmicos apaixonados por argumentação."
   
   guide_arg: "Guia de Argumentação"
   intro: "Introdução"

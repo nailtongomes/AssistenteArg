@@ -138,6 +138,8 @@ en:
   desc_fact: "Describe the case."
   desc_prob: "Describe the problem."
   novo_usu: "novo_usu_en"
+  team: "Team"
+  phrase_team: "This is an environment for graduate students who love to argue."
       
   date:
     abbr_day_names:

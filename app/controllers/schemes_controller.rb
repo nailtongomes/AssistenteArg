@@ -24,7 +24,6 @@ class SchemesController < ApplicationController
   def index
     #filtrar por locale
     @schemes = Scheme.search(params[:search]).paginate(:per_page => 30, :page => params[:page])
-    @schemes
     @scheme = Scheme.new
   end
 

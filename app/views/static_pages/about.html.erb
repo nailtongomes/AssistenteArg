@@ -1,14 +1,14 @@
-<% provide(:title, 'Sobre') %> <h1>Sobre</h1>
+<% provide(:title, t(:about)) %> <h1><%= t(:about) %> </h1>
 <hr/>
 <div class="row">
 	<p style="text-align: center">
-		"Este é um ambiente voltado para acadêmicos apaixonados por argumentação."
+		<%= t(:phrase_team) %>
 	</p>
 	<br/>
 	<div class="span10">
-		<h2 style="text-align: center">Equipe</h2>
+		<h2 style="text-align: center"> <%= t(:team) %></h2>
 		<hr/>
-		<%= textilize Page.find_by_key('about').value if Page.find_by_key('about').value.present? %>		
+		<%= textilize Page.find_by_key(t(:about)).value if Page.find_by_key(t(:about)).value.present? %>		
 	</div>
 	<div class="span2 pull-right" align="center">
 		<a href="http://www.cnpq.br/" target="_blank"><%= image_tag("cnpq.png", :size => "250x100") %></a>
