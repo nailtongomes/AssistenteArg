@@ -2,6 +2,7 @@ en:
   routes:
 pt-BR:
   routes:
+    sandargs: rascunhos
     about: sobre
     following: seguindo
     followers: seguidores
@@ -18,7 +19,6 @@ pt-BR:
     msgs: mensagens
     documents: documentos
     facts: fatos
-    sandargs: rascunhos
     improve: aprimorar
     top: melhores
     new: novo

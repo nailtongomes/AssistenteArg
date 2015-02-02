@@ -54,7 +54,7 @@
 			<% end %>
 		</ul>
 		<hr/>
-		<a href="<%= sandargs_path %>/<%= @sandarg.id %>/edit" class="btn pull-right">Editar</a>
+		<a href="<%= sandargs_path %>/<%= @sandarg.id %>/<%= t(:edit).downcase %>" class="btn pull-right"><%= t(:edit) %></a>
 	</div>
 </div>
 
@@ -122,7 +122,7 @@
 		<h3>Checklist</h3>
 	</div>
 	<div class="modal-body">
-		<%= textilize Page.find_by_key('check_list').value if Page.find_by_key('check_list').value.present? %>
+		<%= textilize Page.find_by_key(t(:check_list)).value if Page.find_by_key(t(:check_list)).value.present? %>
 	</div>
 	<div class="modal-footer">
 		<a href="#" class="btn" data-dismiss="modal">fechar</a>

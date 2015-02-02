@@ -8,7 +8,7 @@
 	<div class="span10">
 		<h2 style="text-align: center"> <%= t(:team) %></h2>
 		<hr/>
-		<%= textilize Page.find_by_key(t(:about)).value if Page.find_by_key(t(:about)).value.present? %>		
+		<%= textilize Page.find_by_key(t(:about)).value if Page.find_by_key(t(:about)).value.present? %>	
 	</div>
 	<div class="span2 pull-right" align="center">
 		<a href="http://www.cnpq.br/" target="_blank"><%= image_tag("cnpq.png", :size => "250x100") %></a>

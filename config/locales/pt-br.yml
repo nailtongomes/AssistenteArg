@@ -24,8 +24,8 @@
   max_char: "*Máximo de Caracteres: 1100"
   arg_content: "Argumente aqui..."
   arg_help: "Precisa de ajuda?"
-  about: "Sobre"
-  contact: "Contato"
+  about: "sobre"
+  contact: "contato"
   by: "por"
   guide: "Guia"
   search: "Pesquisar"
@@ -52,6 +52,7 @@
   w_quality: "3. O que o torna bom?"
   sand_empty: "O texto do seu rascunho ainda não foi construído."
   sand_emptys: "Você ainda não possui rascunhos..."
+  check_list: "check_list"
   
   explain: "Explicar"
   ttl_claim: "Pretensão/Conclusão"
