@@ -31,15 +31,17 @@ class Sandarg < ActiveRecord::Base
   private
 
   def gen_content
-#   lang = User.find(self.user_id).lang
-    b = %([B] #{self.backing})
-    w = %([W] #{self.warrant})
-    g = %([G] #{self.ground})
-    q = %([Q] #{self.qualifier})
-    c = %([C] #{self.claim})    
-    r = %([R] #{self.rebuttal})
-#    if self.overwrite && lang == "pt-BR"
     if self.overwrite
+      lang = User.find(self.user_id).lang
+      b = %([B] #{self.backing})
+      w = %([W] #{self.warrant})
+      g = %([G] #{self.ground})
+      q = %([Q] #{self.qualifier})
+      c = %([C] #{self.claim})    
+      r = %([R] #{self.rebuttal})
+    
+      #Se idioma do user for brasileiro
+      if lang == "pt-BR"
         if self.backing.blank? && self.warrant.present?
           self.content = %[Entende-se que #{w}. Dado que #{g}, portanto, #{q}, #{c}]
         elsif self.backing.present? && self.warrant.blank?
@@ -49,13 +51,26 @@ class Sandarg < ActiveRecord::Base
         else
           self.content = %[Com base no #{b}, assume-se que #{w}. Dado que #{g}, portanto, #{q}, #{c}]  
         end
-        if self.rebuttal.present?
-          self.content << r
-        end      
-#     elsif self.overwrite && lang == "en"
-#
-#
-#     elsif self.overwrite && lang == "es"
-    end         
-  end  
+     #Pensar em resgatar o texto do pages. Ex. "ThreeElements: Dado que #{g}, dessarte, #{q}, #{c}".
+     #Se idioma do user for ingles
+      else self.overwrite && lang == "en"
+        if self.backing.blank? && self.warrant.present?
+          self.content = %[#{w}. #{g}. (#{q}) Therefore, #{c}.]
+        elsif self.backing.present? && self.warrant.blank?
+          self.content = %[#{b}. #{g}. Therefore, (#{q}), #{c}.]
+        elsif self.backing.blank? && self.warrant.blank?        
+          self.content = %[#{g}. Therefore, (#{q}), #{c}.]
+        else
+          self.content = %[#{b}. #{w}. #{g}. Therefore, (#{q}), #{c}.]  
+        end
+      end
+      #     elsif-else self.overwrite && lang == "es"    
+      
+      if self.rebuttal.present?
+        self.content << r
+      end
+      
+    end  
+  end
+  
 end
