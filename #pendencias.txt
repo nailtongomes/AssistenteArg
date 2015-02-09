@@ -1,17 +1,5 @@
-class AddFieldsToSchemes < ActiveRecord::Migration
-  def change
-    add_column :lang, :string, :default => "pt-BR"
-  end  
-end
+Inserir campo lang no form de Schemes.
 
-class AddFieldsToFacts < ActiveRecord::Migration
-  def change
-    add_column :lang, :string, :default => "pt-BR"
-  end  
-end
+Pesquisar Nota 1/5 e usar o I18n.
 
-class AddFieldsToPages < ActiveRecord::Migration
-  def change
-    add_column :lang, :string, :default => "pt-BR"
-  end  
-end
+Index Facts - Problema no Html. - Ver seeds. Procurar "<-- b"
