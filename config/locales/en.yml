@@ -117,6 +117,11 @@ en:
   remove: "Remove"
   welcome: "Welcome to Arg!"
   
+  TwoElements: "TwoElements"
+  ThreeElements1: "ThreeElements1"
+  ThreeElements2: "ThreeElements2"
+  FourElements: "FourElements"  
+  
   moderator_rate: "Assessment of the moderators:"
   user_rate: "Community assessment:"
   title_argument: "%{user}'s Argument"

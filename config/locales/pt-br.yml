@@ -131,6 +131,11 @@
   grant: "Conceder"
   remove: "Remover"
   welcome: "Bem vindo ao Arg!"
+  
+  TwoElements: "DoisElementos"
+  ThreeElements1: "TresElementos1"
+  ThreeElements2: "TresElementos2"
+  FourElements: "QuatroElementos"  
 
   updated: "Atualizado com sucesso!"
   removed: "Removido com sucesso!"
