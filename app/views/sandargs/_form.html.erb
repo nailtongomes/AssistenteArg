@@ -3,26 +3,26 @@
 	<%= render 'shared/error_messages', object: f.object %>
 	<div class="span12">
 		<div class="span5">
-			<b> <%= (:dsc_data) %>:</b>
+			<b> <%= t(:dsc_data) %>:</b>
 			<%= f.text_area :ground,   :placeholder => t(:qst_data), :rows => "9"%>
 		</div>
 		<div class="span5 offset1">
-			<b><%= (:ttl_qlfc) %> [Q]:</b>
+			<b><%= t(:ttl_qlfc) %> [Q]:</b>
 			<%= f.text_field :qualifier, :placeholder => t(:qst_qlfc),
         :data => {:provide => "typeahead",
           :items => "4",
                               :source => '["necessariamente", "provavelmente", "talvez", "necessarily", "very possibly", "maybe", "puede ser", "muy posiblemente", "necesariamente"]'
         } %>
-			<b><%= (:ttl_claim) %> [C]:</b>
+			<b><%= t(:ttl_claim) %> [C]:</b>
 			<%= f.text_area :claim, :placeholder => t(:qst_claim), :rows => "5"%>
 		</div>
 	</div>
 	<div class="span10 offset1">
-		<b><%= (:dsc_rule) %>:</b>
+		<b><%= t(:dsc_rule) %>:</b>
 		<%= f.text_area :warrant,   :placeholder => t(:qst_rule), :rows => "1"%>
 	</div>
 	<div class="span10 offset1">
-		<b><%= (:ttl_back) %> [B]:</b>
+		<b><%= t(:ttl_back) %> [B]:</b>
 		<%= f.text_area :backing,   :placeholder => t(:qst_back), :rows => "1" %>
 	</div>
 	<div class="span10 offset1">
