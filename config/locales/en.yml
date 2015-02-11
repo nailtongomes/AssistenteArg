@@ -147,7 +147,27 @@ en:
   novo_usu: "novo_usu_en"
   team: "Team"
   phrase_team: "This is an environment for graduate students who love to argue."
-      
+  case: "Cases"
+  active: "Actives"
+  pending: "Pending"
+  arguments: "Arguments"
+  data_fact: "Case summary"
+  problem_fact: "Case problem"
+  orient_fact: "Orientation/Guide"
+  empty_fact: "There are no active cases..."
+  qst_factd: "What are the facts?"
+  qst_factp: "Describe the problem..."
+  qst_facto: "What we need to know to argue about this case?"
+  dti_fact: "Begin date"
+  dtf_fact: "Final date"
+  
+  ajaxful_rating:
+    helper:
+      global_average: "Global average: %{value}/%{max}"
+      user_rating: "Your note: %{value}/%{max}"
+      hover: "Note %{value}/%{max}"
+      no_ratings: "No ratings..."  
+  
   date:
     abbr_day_names:
     - Sun
