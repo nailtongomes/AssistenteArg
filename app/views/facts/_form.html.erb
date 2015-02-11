@@ -1,15 +1,15 @@
 <%= form_for(@fact) do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
 
-Fatos/Dados:
-<%= f.text_area :content, :placeholder => "Quais os fatos?", :rows => "5"%>
-Problema:
-<%= f.text_area :problem, :placeholder => "Qual o problema?", :rows => "5"%>
+<%= t(:data_fact) %>:
+<%= f.text_area :content, :placeholder => t(:qst_factd), :rows => "5"%>
+<%= t(:problem_fact) %>:
+<%= f.text_area :problem, :placeholder => t(:qst_factp), :rows => "5"%>
 <% if current_user.moderator? || current_user.admin? %>
-Orientação/Guia:
-<%= f.text_area :orientation, :placeholder => "Informe o que é necessário saber para argumentar sobre esse caso...", :rows => "5"%>
+<%= t(:orient_fact) %>:
+<%= f.text_area :orientation, :placeholder => t(:qst_facto), :rows => "5"%>
 <div class="span4">
-	Data de Publicação:<br/>	
+	<%= t(:dti_fact) %>:<br/>	
 	<div class="span2">
 	<%= f.text_field :ini_term_date, :class => 'datepicker', :size => 10, :maxlength => 10 %>
 	</div>
@@ -18,7 +18,7 @@ Orientação/Guia:
 	</div>
 </div>
 <div class="span4 pull-right">
-	Data de Termo:<br/>	
+	<%= t(:dtf_fact) %>:<br/>	
 	<div class="span2">
 	<%= f.text_field :fin_term_date, :class => 'datepicker', :size => 10, :maxlength => 10 %>
 	</div>
@@ -35,7 +35,7 @@ Orientação/Guia:
 		<% end %>
 		<%= f.hidden_field(:user_id, :value => current_user.id ) %>
 
-		<%= f.submit "Gravar", class: "btn btn-large btn-primary", :disable_with => "Aguarde..." %>
+		<%= f.submit t(:save), class: "btn btn-large btn-primary", :disable_with => t(:wait) %>
 	</div>
 	<% end %>
 </div>
