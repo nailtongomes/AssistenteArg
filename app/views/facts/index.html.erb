@@ -1,18 +1,18 @@
-<% provide(:title, 'Casos Geradores') %>
+<% provide(:title, t(:cases)) %>
 <div class="row">
 	<div class="span10 offset1">
 		<div class="tabbable tabs-below">
 			<ul class="nav nav-tabs">
 				<li>
-					<a href="#lA" data-toggle="tab">Ativos</a>
+					<a href="#lA" data-toggle="tab"><%= t(:active) %></a>
 				</li>
 				<% if current_user.admin? || current_user.moderator? %>
 				<li>
-					<a href="#lB" data-toggle="tab">Pendentes</a>
+					<a href="#lB" data-toggle="tab"><%= t(:pending) %></a>
 				</li>
 				<% end %>
 				<li class="active">
-					<a href="#lC" data-toggle="tab">Propor</a>
+					<a href="#lC" data-toggle="tab"><%= t(:create) %></a>
 				</li>
 			</ul>
 			<div class="tab-content">
@@ -20,15 +20,18 @@
 					<% if @facts.any? %>
 					<% @facts.each do |f| %>
 					<div class="well">
-						<h3>[#C<%= f.id %>] - <%= f.created_at.strftime("Incluído em [%d/%m/%Y]") %> - por [ <%= User.find_by_id(f.user_id).name %> ]
-						<%= link_to "Argumentos", f, class: "btn btn-small btn-info" %>
+						<h3>[#C<%= f.id %>] - <%= t(:created_at) %> <%= time_ago_in_words(f.created_at) %> - <%= t(:by) %> [ <%= User.find_by_id(f.user_id).name %> ]
+						<%= link_to t(:arguments), f, class: "btn btn-small btn-info" %>
 						<% if current_user.admin? %>
-						<%= link_to "Editar", edit_fact_path(f), class: "btn btn-small" %>
-						<%= link_to "Excluir", f, method: :delete, confirm: "Tem certeza?", class: "btn btn-small btn-danger" %><% end %></h3>
+						<%= link_to t(:edit), edit_fact_path(f), class: "btn btn-small" %>
+						<%= link_to t(:delete), f, method: :delete, confirm: t(:confirm), class: "btn btn-small btn-danger" %>
+						<% end %>
+						</h3>
+						<h3><%= t(:data_fact) %></h3>
 						<p>
 							<%= textilize f.content %>
 						</p>
-						<h3>Problema</h3>
+						<h3><%= t(:problem_fact) %></h3>
 						<p>
 							<%= textilize f.problem %>
 						</p>
@@ -36,7 +39,7 @@
 					<% end %>
 					<% else %>
 					<p>
-						Não há casos ativos...
+					  <%= t(:empty_fact) %>
 					</p>
 					<% end %>
 				</div>
@@ -67,7 +70,7 @@
 				</div>
 				<% end %>
 				<div class="tab-pane active" id="lC">
-					<h1>Incluindo Caso</h1>
+					<h1><%= t(:new) %></h1>
 					<hr/>
 					<%= render 'form' %>
 				</div>
