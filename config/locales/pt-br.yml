@@ -154,6 +154,19 @@
   desc_fact: "Descreva o caso."
   desc_prob: "Descreva o problema."
   novo_usu: "novo_usu"
+  case: "Casos"
+  active: "Ativos"
+  pending: "Pendentes"
+  arguments: "Argumentos"
+  data_fact: "Resumo do caso"
+  problem_fact: "Problema"
+  orient_fact: "Orientação/Guia"
+  empty_fact: "Não há casos ativos..."
+  qst_factd: "Quais os fatos?"
+  qst_factp: "Descreva o problema..."
+  qst_facto: "Informe o que é necessário saber para argumentar sobre esse caso..."
+  dti_fact: "Data de Publicação"
+  dtf_fact: "Data de Término"  
 
   ajaxful_rating:
     helper:
