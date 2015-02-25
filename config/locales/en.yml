@@ -414,6 +414,7 @@ en:
         fin_term_date: "End date"
         ini_term_time: "Start time"
         fin_term_time: "End time"
+        lang: "Language"
       scheme:
         name: "Name"
         form: "Form"
