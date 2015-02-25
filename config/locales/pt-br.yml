@@ -434,6 +434,7 @@
         fin_term_date: "Data de Término"
         ini_term_time: "Horário de Início"
         fin_term_time: "Horário de Término"
+        lang: "Linguagem"
       scheme:
         name: "Nome ou Título"
         form: "Forma do Esquema"
