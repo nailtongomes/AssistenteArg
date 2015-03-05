@@ -434,11 +434,12 @@
         fin_term_date: "Data de Término"
         ini_term_time: "Horário de Início"
         fin_term_time: "Horário de Término"
-        lang: "Linguagem"
+        lang: "Idioma"
       scheme:
         name: "Nome ou Título"
         form: "Forma do Esquema"
         cq: "Questões Críticas"
+        lang: "Idioma"
       document:
         title: "Título"
         subject: "Descrição"

@@ -419,6 +419,7 @@ en:
         name: "Name"
         form: "Form"
         cq: "Critical Question(s)"
+        lang: "Language"
       document:
         title: "Title"
         subject: "Description"

@@ -7,7 +7,7 @@
 <%= t('activerecord.attributes.scheme.cq') %>
 <%= f.text_area :cq, :placeholder => t('activerecord.attributes.scheme.cq'), :rows => "5"%>
 <%= t('activerecord.attributes.scheme.lang') %>
-<%= f.select :lang, options_for_select([['Português (PT-BR)', "pt-BR"], ['English (EN)', "en"], ['Español (ES)', "es-419"]], @fact.lang) %>
+<%= f.select :lang, options_for_select([['Português (PT-BR)', "pt-BR"], ['English (EN)', "en"], ['Español (ES)', "es-419"]], @scheme.lang) %>
 
 <hr/>
 <div class="pull-right">
