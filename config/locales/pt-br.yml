@@ -167,6 +167,8 @@
   qst_facto: "Informe o que é necessário saber para argumentar sobre esse caso..."
   dti_fact: "Data de Publicação"
   dtf_fact: "Data de Término"  
+  
+  signup_not: "signup_br"
 
   ajaxful_rating:
     helper:
