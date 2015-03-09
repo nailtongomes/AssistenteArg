@@ -161,6 +161,8 @@ en:
   dti_fact: "Begin date"
   dtf_fact: "Final date"
   
+  signup_not: "signup_en"
+  
   ajaxful_rating:
     helper:
       global_average: "Global average: %{value}/%{max}"
