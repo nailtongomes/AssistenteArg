@@ -169,6 +169,7 @@
   dtf_fact: "Data de Término"  
   
   signup_not: "signup_br"
+  greeting: "Prezado(a)"
 
   ajaxful_rating:
     helper:
