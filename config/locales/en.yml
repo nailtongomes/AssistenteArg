@@ -163,6 +163,7 @@ en:
   
   greeting: "Dear"
   signup_not: "signup_en"
+  recover_not: "recover_en"
   
   ajaxful_rating:
     helper:
