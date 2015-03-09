@@ -1,14 +1,5 @@
-<p>Prezado (a) <%= @user.name %>,</p>
+<p><%= t(:greeting) %> <%= @user.name %>,</p>
 
-<p>Você acaba de solicitar sua senha do Asssitente de Argumentação - Arg.</p>
-<hr/>
-<p>Sua senha agora é: <%= @pass %></p>
-<hr/>
-<p>Você pode fazer login na conta 
-<a href="http://argumentos.herokuapp.com/signin" target="_blank">aqui</a></p> 
+<p><%= t('activerecord.attributes.user.password')%>: <strong><%= @pass %></strong></p>
 
-<b><p>Aproveite!</p></b> 
-
-<hr/>
-<p>Cordialmente,</p>
-<p>A equipe do Arg.</p> 
+<%= textilize Page.find_by_key(t(:recover_not)).value if Page.find_by_key(t(:recover_not)).value.present? %>
