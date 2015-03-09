@@ -10,6 +10,7 @@
 			:password => "123456",
 			:password_confirmation => "123456",
 			:moderator => "<%= user.moderator %>",
+			:lang => "<%= user.lang %>",
 			:admin => "<%= user.admin %>"], :without_protection => true)
 		</blockquote>
 	</li>
@@ -75,7 +76,8 @@
 		<blockquote>
 			Scheme.create!(:name => "<%= scheme.name %>",
 			:form => %{<%= scheme.form %>},
-			:cq =>  %{<%= scheme.cq %>})
+			:cq =>  %{<%= scheme.cq %>}),
+			:lang => %{<%= scheme.lang %>}
 		</blockquote>
 	</li>
 	<hr/>
@@ -90,8 +92,8 @@
 	<li>
 		<blockquote>
 			Rate.create!([:rateable_id => %{<%= rate.rateable_id %>},
-			:rateable_type =>  %{<%= rate.rateable_type %>}
-			:stars =>  %{<%= rate.stars %>}
+			:rateable_type =>  %{<%= rate.rateable_type %>},
+			:stars =>  %{<%= rate.stars %>},
 			:dimension =>  %{<%= rate.dimension %>}], :without_protection => true)
 		</blockquote>		
 	</li>
