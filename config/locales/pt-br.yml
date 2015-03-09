@@ -168,6 +168,7 @@
   dti_fact: "Data de Publicação"
   dtf_fact: "Data de Término"  
   
+  recover_not: "recover_br"
   signup_not: "signup_br"
   greeting: "Prezado(a)"
 
