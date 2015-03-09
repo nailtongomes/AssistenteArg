@@ -161,6 +161,7 @@ en:
   dti_fact: "Begin date"
   dtf_fact: "Final date"
   
+  greeting: "Dear"
   signup_not: "signup_en"
   
   ajaxful_rating:
