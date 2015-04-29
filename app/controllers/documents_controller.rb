@@ -7,10 +7,12 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find(params[:id])
+    if !@document.active #inserido
      if current_user.nil? || (!@document.active && @document.user_id != current_user.id)
-       flash[:error] = t(:private_doc)
+       flash[:error] = t(:private_do)
        redirect_to documents_path    
      end
+   end #inserido
   end
 
   def create
